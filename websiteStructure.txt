@@ -1,0 +1,11 @@
+#1 Top side Navigation / Side bar navigation
+- about me
+- portfolio
+- skills
+- contacts
+
+#2 Main part of the website
+- image of myself with some info and my want to dos
+
+#3 footer
+
