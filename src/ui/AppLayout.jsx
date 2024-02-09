@@ -4,6 +4,8 @@ import styled from 'styled-components';
 const StyledAppLayoyt = styled.div``;
 
 const StyledHeader = styled.header`
+  height: 50px;
+  border-bottom: 1px groove var(--color-grey-700);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,6 +19,8 @@ const StyledRight = styled.div`
 const StyledNavLink = styled(NavLink)`
   /* padding: 0px 10px;
   border-right: solid black 1px; */
+
+  color: #b6fffa;
 `;
 
 function AppLayout() {
