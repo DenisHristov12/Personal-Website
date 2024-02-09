@@ -1,7 +1,12 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
+import { StyledNavLink } from './NavLink';
 
-const StyledAppLayoyt = styled.div``;
+const StyledAppLayout = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-content: center;
+`;
 
 const StyledHeader = styled.header`
   height: 50px;
@@ -16,16 +21,13 @@ const StyledRight = styled.div`
   gap: 5px;
 `;
 
-const StyledNavLink = styled(NavLink)`
-  /* padding: 0px 10px;
-  border-right: solid black 1px; */
-
-  color: #b6fffa;
+const Main = styled.main`
+  place-self: center;
 `;
 
 function AppLayout() {
   return (
-    <div>
+    <StyledAppLayout>
       {/* style header and the links */}
       <StyledHeader>
         <div>
@@ -38,10 +40,10 @@ function AppLayout() {
         </StyledRight>
       </StyledHeader>
 
-      <main>
+      <Main>
         <Outlet />
-      </main>
-    </div>
+      </Main>
+    </StyledAppLayout>
   );
 }
 

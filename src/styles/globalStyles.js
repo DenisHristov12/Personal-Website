@@ -17,15 +17,18 @@ const GlobalStyles = createGlobalStyle`
 --color-grey-800: #1f2937;
 --color-grey-900: #111827;
 
+--color-yellow-50: #fefce8;
+--color-yellow-100: #fef9c3;
+--color-yellow-200: #fef08a;
+--color-yellow-300: #fde047;
+--color-yellow-400: #facc15;
+--color-yellow-500: #eab308;
+--color-yellow-600: #ca8a04;
+--color-yellow-700: #a16207;
+
 --color-red-100: #fee2e2;
 --color-red-700: #b91c1c;
 --color-red-800: #991b1b;
-
-
-  /* --border-radius-tiny: 3px;
-  --border-radius-sm: 5px;
-  --border-radius-md: 7px;
-  --border-radius-lg: 9px; */
 
  
 }
@@ -42,54 +45,34 @@ const GlobalStyles = createGlobalStyle`
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 65%;
+  
 }
 
 body {
-  /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); */
-    /* background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%); */
-    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-  font-family: "Poppins", sans-serif;
-  /* color: var(--color-grey-700); */
+ background-image: linear-gradient(to right, #434343 0%, black 100%);
+ font-family: 'Miltonian Tattoo', serif;
+
 
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
   line-height: 1.5;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
-
-/* input,
-button,
-textarea,
-select {
-  font: inherit;
-  color: inherit;
-} */
 
 button {
   cursor: pointer;
-  
 }
 
 *:disabled {
   cursor: not-allowed;
 }
 
-/* select:disabled,
-input:disabled {
-  background-color: var(--color-grey-200);
-  color: var(--color-grey-500);
-} */
-
-/* input:focus, */
-/* textarea:focus, */
-/* select:focus */
 button:focus {
   outline: 2px solid var(--color-brand-600);
   outline-offset: -1px;
 }
 
-/* Parent selector, finally 😃 */
 button:has(svg) {
   line-height: 0;
 }
@@ -113,17 +96,6 @@ h6 {
   overflow-wrap: break-word;
   hyphens: auto;
 }
-
-/* img {
-  max-width: 100%;
-
- 
-  filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
-} */
-
-
-/* FOR DARK MODE */
-
 
 
 --color-blue-100: #075985;

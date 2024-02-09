@@ -1,62 +1,74 @@
 import styled from 'styled-components';
 
+// style home page
+const StyledHome = styled.div`
+  height: 500px;
+  margin-top: 110px;
+  /* height: 100vh; */
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 300px;
+  align-items: center;
+  flex-direction: row;
+  /* overflow-y: scroll; */
+  background-color: var(--color-yellow-400);
+  border-radius: 10px;
+`;
+
+const Div = styled.div`
+  text-align: center;
+  background-color: var(--color-yellow-200);
+  color: var(--color-grey-700);
+  /* background-color: red; */
+  /* flex: 1; */
+  width: 400px;
+  /* margin-top: 15%; */
+  margin-left: 10%;
+  border-radius: 32px;
+  padding: 10px 20px 20px;
+`;
+
+const P = styled.p`
+  margin-top: 10px;
+`;
+
+const ImgDiv = styled.div`
+  /* padding-top: 20px; */
+  /* margin-top: 8%; */
+  width: auto;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 100px;
+`;
+
+const Img = styled.img`
+  /* margin-top: 10%; */
+  width: auto;
+  height: 650px;
+  margin-bottom: 50px;
+`;
+
 function Home() {
-  // style home page
-  const StyledHome = styled.div`
-    height: 100vh;
-    display: flex;
-    /* justify-content: space-between; */
-    gap: 300px;
-    align-items: center;
-    flex-direction: row;
-    /* overflow-y: scroll; */
-  `;
-
-  const P = styled.p`
-    text-align: center;
-    background-color: var(--color-grey-700);
-    color: var(--color-grey-50);
-    /* background-color: red; */
-    /* flex: 1; */
-    width: 500px;
-    /* margin-top: 15%; */
-    margin-left: 10%;
-  `;
-
-  const ImgDiv = styled.div`
-    /* margin-top: 8%; */
-    width: auto;
-    height: 450px;
-    overflow: hidden;
-    border-radius: 50%;
-    margin-right: 100px;
-  `;
-
-  const Img = styled.img`
-    /* margin-top: 10%; */
-    width: auto;
-    height: 650px;
-    margin-bottom: 50px;
-  `;
-
   return (
     <StyledHome>
-      <P>
-        Description about myself. Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Odio sequi illo vero! Ipsa odit reiciendis, itaque
-        dolorem voluptas, asperiores error quod modi earum debitis obcaecati
-        distinctio illo. Aspernatur, temporibus exercitationem? Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Tempora dolores molestiae
-        commodi magnam, esse quod sequi temporibus accusantium aliquam minus
-        facilis cupiditate voluptatem deleniti, hic, amet itaque beatae labore
-        tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-        voluptate ipsum eveniet accusantium recusandae ipsam magnam delectus
-        alias necessitatibus possimus dolore, commodi deleniti reiciendis sunt
-        rem minus omnis architecto sed. Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Fuga laboriosam, aut perspiciatis dolores quo, culpa
-        obcaecati error velit quas, voluptatum ipsum aliquam beatae veniam!
-        Ratione obcaecati maiores a quo doloremque.
-      </P>
+      <Div>
+        My name is Denis.
+        <P>
+          I am a student at Technical University of Sofia who wants to improve
+          his skills. I am ambitious and a fast learner!
+        </P>
+        <P>
+          I like to work in a team because of the skills, advices and support
+          that the other people can exchange with you! I am actively learning
+          JavaScript for about 2 years. Started learning React 2 months ago and
+          i am developing my skills in React right now.
+        </P>
+        <P>
+          I wnat to improve my skills and learn new technologies in web
+          development sphere.
+        </P>
+      </Div>
 
       <ImgDiv>
         <Img
