@@ -45,19 +45,19 @@ const GlobalStyles = createGlobalStyle`
 }
 
 html {
-  font-size: 65%;
+  font-size: 62.5%;
   
 }
 
 body {
  background-image: linear-gradient(to right, #434343 0%, black 100%);
- font-family: 'Miltonian Tattoo', serif;
+ font-family: 'Rubik', sans-serif;
 
 
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
   line-height: 1.5;
-  font-size: 1.8rem;
+  /* font-size: 1.8rem; */
 }
 
 button {
@@ -124,3 +124,9 @@ h6 {
 `;
 
 export default GlobalStyles;
+
+// - FONT SIZE SYSTEM (px)
+// 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+// - SPACING SYSTEM (px)
+// 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
