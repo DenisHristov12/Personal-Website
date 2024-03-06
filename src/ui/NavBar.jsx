@@ -5,7 +5,7 @@ const StyledNav = styled.nav`
   height: 10%;
   padding: 0 2.4rem;
 
-  border-bottom: 2px solid black;
+  /* border-bottom: 2px solid var(--color-main-700); */
 `;
 
 const StyledSpan = styled.span`

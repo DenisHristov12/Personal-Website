@@ -110,6 +110,7 @@ h6 {
 }
 
 
+
 --color-blue-100: #075985;
 --color-blue-700: #e0f2fe;
 --color-green-100: #166534;
