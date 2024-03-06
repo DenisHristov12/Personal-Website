@@ -8,10 +8,13 @@ import styled from 'styled-components';
 export const StyledNavLink = styled(NavLink)`
   display: inline-block;
 
-  width: 16rem;
+  width: 12rem;
 
-  padding: 0.8rem 1.6rem;
-  margin: 0 0.8rem;
+  padding: 0.8rem 1.2rem;
+  margin: 0 2.4rem;
+
+  font-size: 1.6rem;
+  font-weight: 500;
 
   &:link,
   &:visited {
@@ -20,8 +23,7 @@ export const StyledNavLink = styled(NavLink)`
     gap: 1.2rem;
 
     color: var(--color-main-100);
-    font-size: 1.6rem;
-    font-weight: 600;
+
     border-bottom: 1px solid var(--color-main-700);
 
     border-right: 1px solid var(--color-main-700);

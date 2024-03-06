@@ -109,6 +109,28 @@ h6 {
   hyphens: auto;
 }
 
+/* @keyframes coolAnimation {
+      0% {
+        transform: scale(1) rotate(0deg);
+        color: var(--color-main-100);
+      }
+      25% {
+        transform: scale(1.2) rotate(180deg);
+        color: var(--color-main-700); /* Change color during animation */
+      /* }
+      50% {
+        transform: scale(1) rotate(360deg);
+        color: var(--color-main-2000);
+      }
+      75% {
+        transform: scale(1) rotate(360deg);
+        color: var(--color-main-100);
+      }
+      100% {
+        transform: scale(1) rotate(360deg);
+        color: var(--color-main-700);
+      } 
+    } */
 
 
 --color-blue-100: #075985;

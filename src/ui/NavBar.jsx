@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { StyledNavLink } from './NavLink';
 
 const StyledNav = styled.nav`
@@ -8,10 +8,23 @@ const StyledNav = styled.nav`
   /* border-bottom: 2px solid var(--color-main-700); */
 `;
 
+// const bounce = keyframes`
+//   0%, 40%, 100% {
+//     transform: translateY(0);
+//   }
+
+//   20% {
+//     transform: translateY(-30px);
+//   }
+// `;
+
 const StyledSpan = styled.span`
-  font-size: 1.6rem;
+  font-size: 2.4rem;
   font-weight: 600;
-  color: var(--color-grey-100);
+  color: var(--color-main-100);
+
+  /* animation: coolAnimation 3s infinite; */
+  /* animation:  1.5s linear infinite; */
 `;
 
 const StyledUl = styled.ul`
@@ -38,7 +51,19 @@ function NavBar() {
     <StyledNav>
       <StyledUl>
         <li>
-          <StyledSpan>Denis Hristov</StyledSpan>
+          <StyledSpan>D</StyledSpan>
+          <StyledSpan>e</StyledSpan>
+          <StyledSpan>n</StyledSpan>
+          <StyledSpan>i</StyledSpan>
+          <StyledSpan>s</StyledSpan>
+          <StyledSpan>&nbsp;</StyledSpan>
+          <StyledSpan>H</StyledSpan>
+          <StyledSpan>r</StyledSpan>
+          <StyledSpan>i</StyledSpan>
+          <StyledSpan>s</StyledSpan>
+          <StyledSpan>t</StyledSpan>
+          <StyledSpan>o</StyledSpan>
+          <StyledSpan>v</StyledSpan>
         </li>
         <li>
           <StyledNavLink to='/home'>Home</StyledNavLink>

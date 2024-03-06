@@ -1,58 +1,45 @@
 import styled from 'styled-components';
 
-// style home page
-const StyledHome = styled.div`
-  height: 50rem;
-  margin: 10rem 20rem;
-  /* height: 100vh; */
+const StyledDiv = styled.div`
+  margin-left: auto;
+  margin-right: 8rem;
+  margin-top: 10%;
+  width: 50%;
+  height: 50%;
   display: flex;
-  /* justify-content: space-between; */
-  gap: 300px;
+  flex-direction: column;
+
   align-items: center;
-  flex-direction: row;
-  /* overflow-y: scroll; */
-  /* background-color: var(--color-yellow-300); */
-  border-radius: 10px;
+  justify-content: center;
 
-  opacity: 0.8;
+  background-color: blue;
 `;
 
-const Div = styled.div`
+const StyledP = styled.p`
+  font-size: 2.4rem;
+  display: inline-block;
+  background-color: red;
   text-align: center;
-  background-color: var(--color-yellow-200);
-  color: var(--color-grey-700);
-  /* background-color: red; */
-  /* flex: 1; */
-  width: 400px;
-  /* margin-top: 15%; */
-  margin-left: 10%;
-  border-radius: 32px;
-  padding: 10px 20px 20px;
+
+  color: var(--color-main-100);
+
+  word-wrap: break-word;
 `;
 
-const P = styled.p`
-  margin-top: 10px;
-`;
-
-const ImgDiv = styled.div`
-  /* padding-top: 20px; */
-  /* margin-top: 8%; */
-  width: auto;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 50%;
-  margin-right: 100px;
-`;
-
-const Img = styled.img`
-  /* margin-top: 10%; */
-  width: auto;
-  height: 650px;
-  margin-bottom: 50px;
+const StyledButton = styled.button`
+  font-size: 1.2rem;
+  width: 6.6rem;
+  background-color: red;
+  padding: 0.8rem 1.2rem;
 `;
 
 function Home() {
-  return <StyledHome></StyledHome>;
+  return (
+    <StyledDiv>
+      <StyledP>Hello, My name is Denis! Welcome to my Website</StyledP>
+      <StyledButton>Learn more</StyledButton>
+    </StyledDiv>
+  );
 }
 
 export default Home;
