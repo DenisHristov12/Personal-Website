@@ -11,7 +11,7 @@ const StyledHome = styled.div`
   align-items: center;
   flex-direction: row;
   /* overflow-y: scroll; */
-  background-color: var(--color-yellow-300);
+  /* background-color: var(--color-yellow-300); */
   border-radius: 10px;
 
   opacity: 0.8;
@@ -52,31 +52,7 @@ const Img = styled.img`
 `;
 
 function Home() {
-  return (
-    <StyledHome>
-      <Div>
-        My name is Denis.
-        <P>
-          I am a student at Technical University of Sofia who wants to improve
-          his skills. I am ambitious and a fast learner!
-        </P>
-        <P>
-          I like to work in a team because of the skills, advices and support
-          that the other people can exchange with you! I am actively learning
-          JavaScript for about 2 years. Started learning React 2 months ago and
-          i am developing my skills in React right now.
-        </P>
-        <P>
-          I wnat to improve my skills and learn new technologies in web
-          development sphere.
-        </P>
-      </Div>
-
-      <ImgDiv>
-        <Img src='DSC_1625.jpg' alt='Photo of Denis Hristov' />
-      </ImgDiv>
-    </StyledHome>
-  );
+  return <StyledHome></StyledHome>;
 }
 
 export default Home;

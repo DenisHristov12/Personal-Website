@@ -17,14 +17,22 @@ const GlobalStyles = createGlobalStyle`
 --color-grey-800: #1f2937;
 --color-grey-900: #111827;
 
---color-yellow-50: #fefce8;
---color-yellow-100: #fef9c3;
---color-yellow-200: #fef08a;
---color-yellow-300: #fde047;
---color-yellow-400: #facc15;
---color-yellow-500: #eab308;
---color-yellow-600: #ca8a04;
---color-yellow-700: #a16207;
+
+--color-main-100: #f0ffc2;
+--color-main-200: #ebffad;
+--color-main-300: #e6ff99;
+--color-main-400: #e0ff85;
+--color-main-500: #dbff70;
+--color-main-600: #d6ff5c;
+
+--color-main-700: #ccff33;
+
+--color-main-800: #b8e62e;
+--color-main-900: #a3cc29;
+--color-main-1000: #8fb324;
+--color-main-2000: #7a991f;
+--color-main-3000: #66801a;
+--color-main-4000: #526614;
 
 --color-red-100: #fee2e2;
 --color-red-700: #b91c1c;

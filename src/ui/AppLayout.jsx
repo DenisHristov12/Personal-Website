@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import NavBar from './NavBar';
 
 const BackgroundImg = styled.div`
-  background-image: url('denis.jpeg');
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+    url('full.JPG');
+  /* background-image: url('full.JPG'); */
   background-size: cover;
-  background-position: top;
+  background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  overflow: hidden;
 
   height: 100vh;
 `;

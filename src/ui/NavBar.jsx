@@ -8,10 +8,16 @@ const StyledNav = styled.nav`
   border-bottom: 2px solid black;
 `;
 
+const StyledSpan = styled.span`
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-grey-100);
+`;
+
 const StyledUl = styled.ul`
   height: 100%;
   display: grid;
-  grid-template-columns: 3fr 0.5fr 0.5fr 0.5fr;
+  grid-template-columns: 3fr 0.5fr 0.5fr 0.5fr 0.5fr;
   /* grid-template-rows: 1fr; */
 
   /* align-content: center; */
@@ -32,7 +38,10 @@ function NavBar() {
     <StyledNav>
       <StyledUl>
         <li>
-          <StyledNavLink to='/home'>Denis Hristov</StyledNavLink>
+          <StyledSpan>Denis Hristov</StyledSpan>
+        </li>
+        <li>
+          <StyledNavLink to='/home'>Home</StyledNavLink>
         </li>
         <li>
           <StyledNavLink to='/about'>About me</StyledNavLink>
