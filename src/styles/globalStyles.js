@@ -50,7 +50,11 @@ html {
 }
 
 body {
- background-image: linear-gradient(to right, #434343 0%, black 100%);
+  
+ /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+ background-size: 100% 50%;
+
+
  font-family: 'Rubik', sans-serif;
 
 

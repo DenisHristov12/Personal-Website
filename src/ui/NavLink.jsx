@@ -22,6 +22,11 @@ export const StyledNavLink = styled(NavLink)`
     color: var(--color-yellow-400);
     font-size: 1.6rem;
     font-weight: 600;
+    border-bottom: 1px solid var(--color-yellow-400);
+
+    border-right: 1px solid var(--color-yellow-400);
+
+    border-radius: 10px;
     /* padding: 1.2rem 2.4rem; */
     transition: all 0.5s;
   }
@@ -33,6 +38,6 @@ export const StyledNavLink = styled(NavLink)`
   &.active:visited {
     color: var(--color-grey-900);
     background-color: var(--color-yellow-400);
-    border-radius: 50px;
+    border-radius: 15px;
   }
 `;
