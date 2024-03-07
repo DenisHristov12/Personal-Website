@@ -5,6 +5,10 @@ const StyledNav = styled.nav`
   height: 10%;
   padding: 0 2.4rem;
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   /* border-bottom: 2px solid var(--color-main-700); */
 `;
 
@@ -29,19 +33,13 @@ const StyledSpan = styled.span`
 
 const StyledUl = styled.ul`
   height: 100%;
-  display: grid;
-  grid-template-columns: 3fr 0.5fr 0.5fr 0.5fr 0.5fr;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+
   /* grid-template-rows: 1fr; */
 
   /* align-content: center; */
-  align-items: center;
-  justify-items: end;
-
-  > * {
-    &:first-child {
-      justify-self: start;
-    }
-  }
 
   /* gap: 0.8rem; */
 `;
@@ -49,22 +47,22 @@ const StyledUl = styled.ul`
 function NavBar() {
   return (
     <StyledNav>
+      <div>
+        <StyledSpan>D</StyledSpan>
+        <StyledSpan>e</StyledSpan>
+        <StyledSpan>n</StyledSpan>
+        <StyledSpan>i</StyledSpan>
+        <StyledSpan>s</StyledSpan>
+        <StyledSpan>&nbsp;</StyledSpan>
+        <StyledSpan>H</StyledSpan>
+        <StyledSpan>r</StyledSpan>
+        <StyledSpan>i</StyledSpan>
+        <StyledSpan>s</StyledSpan>
+        <StyledSpan>t</StyledSpan>
+        <StyledSpan>o</StyledSpan>
+        <StyledSpan>v</StyledSpan>
+      </div>
       <StyledUl>
-        <li>
-          <StyledSpan>D</StyledSpan>
-          <StyledSpan>e</StyledSpan>
-          <StyledSpan>n</StyledSpan>
-          <StyledSpan>i</StyledSpan>
-          <StyledSpan>s</StyledSpan>
-          <StyledSpan>&nbsp;</StyledSpan>
-          <StyledSpan>H</StyledSpan>
-          <StyledSpan>r</StyledSpan>
-          <StyledSpan>i</StyledSpan>
-          <StyledSpan>s</StyledSpan>
-          <StyledSpan>t</StyledSpan>
-          <StyledSpan>o</StyledSpan>
-          <StyledSpan>v</StyledSpan>
-        </li>
         <li>
           <StyledNavLink to='/home'>Home</StyledNavLink>
         </li>

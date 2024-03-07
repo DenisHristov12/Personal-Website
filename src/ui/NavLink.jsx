@@ -5,13 +5,17 @@ import styled from 'styled-components';
 //   text-decoration: none;
 // `;
 
+// const homeButtonStyles = {
+//   width: '24rem',
+//   padding:
+// };
+
 export const StyledNavLink = styled(NavLink)`
   display: inline-block;
 
   width: 12rem;
 
   padding: 0.8rem 1.2rem;
-  margin: 0 2.4rem;
 
   font-size: 1.6rem;
   font-weight: 500;
@@ -39,7 +43,6 @@ export const StyledNavLink = styled(NavLink)`
 
     background-color: var(--color-main-100);
     border: 1px solid var(--color-main-1000);
-    border-radius: 4px;
     box-shadow: var(--color-main-700) 4px 4px 0 0,
       var(--color-main-4000) 4px 4px 0 1px;
 
