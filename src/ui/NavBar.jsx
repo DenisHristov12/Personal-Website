@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import { StyledNavLink } from './NavLink';
 
 const StyledNav = styled.nav`
+  width: 100%;
   height: 10%;
   padding: 0 2.4rem;
 
@@ -12,23 +13,26 @@ const StyledNav = styled.nav`
   /* border-bottom: 2px solid var(--color-main-700); */
 `;
 
-// const bounce = keyframes`
-//   0%, 40%, 100% {
-//     transform: translateY(0);
-//   }
+const StyledDiv = styled.div`
+  line-height: 1;
+`;
 
-//   20% {
-//     transform: translateY(-30px);
-//   }
-// `;
+const StyledDivSecond = styled.div`
+  transform: translateX(6.3rem);
+`;
 
 const StyledSpan = styled.span`
   font-size: 2.4rem;
-  font-weight: 600;
+  font-weight: 800;
+  margin-right: 0.2rem;
+
   color: var(--color-main-100);
 
-  /* animation: coolAnimation 3s infinite; */
-  /* animation:  1.5s linear infinite; */
+  opacity: 1;
+`;
+
+const StyledSpanFirstLast = styled(StyledSpan)`
+  color: var(--color-main-700);
 `;
 
 const StyledUl = styled.ul`
@@ -47,21 +51,24 @@ const StyledUl = styled.ul`
 function NavBar() {
   return (
     <StyledNav>
-      <div>
-        <StyledSpan>D</StyledSpan>
-        <StyledSpan>e</StyledSpan>
-        <StyledSpan>n</StyledSpan>
-        <StyledSpan>i</StyledSpan>
-        <StyledSpan>s</StyledSpan>
-        <StyledSpan>&nbsp;</StyledSpan>
-        <StyledSpan>H</StyledSpan>
-        <StyledSpan>r</StyledSpan>
-        <StyledSpan>i</StyledSpan>
-        <StyledSpan>s</StyledSpan>
-        <StyledSpan>t</StyledSpan>
-        <StyledSpan>o</StyledSpan>
-        <StyledSpan>v</StyledSpan>
-      </div>
+      <StyledDiv>
+        <div>
+          <StyledSpanFirstLast>D</StyledSpanFirstLast>
+          <StyledSpan>e</StyledSpan>
+          <StyledSpan>n</StyledSpan>
+          <StyledSpan>i</StyledSpan>
+          <StyledSpanFirstLast>S</StyledSpanFirstLast>
+        </div>
+        <StyledDivSecond>
+          <StyledSpanFirstLast>H</StyledSpanFirstLast>
+          <StyledSpan>r</StyledSpan>
+          <StyledSpan>i</StyledSpan>
+          <StyledSpan>s</StyledSpan>
+          <StyledSpan>t</StyledSpan>
+          <StyledSpan>o</StyledSpan>
+          <StyledSpanFirstLast>V</StyledSpanFirstLast>
+        </StyledDivSecond>
+      </StyledDiv>
       <StyledUl>
         <li>
           <StyledNavLink to='/home'>Home</StyledNavLink>

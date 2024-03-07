@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { StyledNavLink } from '../ui/NavLink';
+import { MainButton, StyledNavLink } from '../ui/NavLink';
 
 const StyledDiv = styled.div`
   margin-left: auto;
-  margin-right: 15%;
+  margin-right: 17%;
   margin-top: 5%;
   padding: 2.4rem 1.2rem;
   width: 30%;
@@ -19,9 +19,10 @@ const StyledDiv = styled.div`
   /* opacity: 0.5; */
 `;
 
-const StyledP = styled.p`
-  font-size: 4.8rem;
+const StyledH1 = styled.h1`
+  font-size: 5.2rem;
   display: inline-block;
+  font-weight: 700;
   /* background-color: red; */
   text-align: center;
 
@@ -30,19 +31,13 @@ const StyledP = styled.p`
   word-wrap: break-word;
 `;
 
-const StyledSpan = styled.span`
-  /* display: inline-block; */
-
-  text-decoration: double;
-`;
-
 function Home() {
   return (
     <StyledDiv>
-      <StyledP>
-        Hello, My name is <StyledSpan>Denis</StyledSpan>! Welcome to my Website!
-      </StyledP>
-      <StyledNavLink className='homeButton'>Learn more</StyledNavLink>
+      <StyledH1>Welcome to Denis Hristov's website!</StyledH1>
+      <MainButton to='/about' variant='mainButton'>
+        See more
+      </MainButton>
     </StyledDiv>
   );
 }

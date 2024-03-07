@@ -12,6 +12,7 @@ import styled from 'styled-components';
 
 export const StyledNavLink = styled(NavLink)`
   display: inline-block;
+  text-decoration: none;
 
   width: 12rem;
 
@@ -46,6 +47,39 @@ export const StyledNavLink = styled(NavLink)`
     box-shadow: var(--color-main-700) 4px 4px 0 0,
       var(--color-main-4000) 4px 4px 0 1px;
 
+    overflow: visible;
+  }
+`;
+
+export const MainButton = styled(StyledNavLink)`
+  width: 24rem;
+
+  padding: 1.2rem 2.4rem;
+
+  font-size: 2rem;
+  font-weight: 600;
+
+  &:link,
+  &:visited {
+    color: var(--color-grey-900);
+
+    background-color: var(--color-main-700);
+    border: 3px solid var(--color-main-700);
+    box-shadow: var(--color-main-100) 4px 4px 0 0,
+      var(--color-main-4000) 4px 4px 0 1px;
+
+    overflow: visible;
+  }
+
+  &:hover,
+  &:active,
+  &.active:link,
+  &.active:visited {
+    color: var(--color-main-100);
+
+    border: 3px solid var(--color-main-700);
+    background-color: transparent;
+    box-shadow: none;
     overflow: visible;
   }
 `;
