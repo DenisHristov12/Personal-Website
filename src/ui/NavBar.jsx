@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { StyledNavLink } from './NavLink';
 
 const StyledNav = styled.nav`
@@ -9,8 +9,6 @@ const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  /* border-bottom: 2px solid var(--color-main-700); */
 `;
 
 const StyledDiv = styled.div`
@@ -27,8 +25,6 @@ const StyledSpan = styled.span`
   margin-right: 0.2rem;
 
   color: var(--color-main-100);
-
-  opacity: 1;
 `;
 
 const StyledSpanFirstLast = styled(StyledSpan)`
@@ -40,12 +36,6 @@ const StyledUl = styled.ul`
   display: flex;
   align-items: center;
   gap: 4.8rem;
-
-  /* grid-template-rows: 1fr; */
-
-  /* align-content: center; */
-
-  /* gap: 0.8rem; */
 `;
 
 function NavBar() {

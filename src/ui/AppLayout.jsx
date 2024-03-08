@@ -10,7 +10,6 @@ const BackgroundImg = styled.div`
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-repeat: no-repeat;
 
   height: 100vh;
 `;
