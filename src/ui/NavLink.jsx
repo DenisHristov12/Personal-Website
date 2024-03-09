@@ -65,10 +65,6 @@ export const MainButton = styled(StyledNavLink)`
 
     background-color: var(--color-main-700);
     border: 3px solid var(--color-main-700);
-    box-shadow: var(--color-main-100) 4px 4px 0 0,
-      var(--color-main-4000) 4px 4px 0 1px;
-
-    overflow: visible;
   }
 
   &:hover,
