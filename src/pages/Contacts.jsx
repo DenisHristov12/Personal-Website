@@ -1,5 +1,6 @@
 import emailjs from '@emailjs/browser';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import styled from 'styled-components';
 
 const StyledContacts = styled.section`
@@ -30,13 +31,13 @@ const StyledInputBox = styled.div`
 
 const StyledLabel = styled.label`
   font-size: 1.6rem;
-  color: var(--color-main-800);
+  color: var(--color-main-700);
   transition: all 0.5s ease-in-out;
 `;
 
 const StyledInput = styled.input`
   border: 0;
-  border-bottom: 1px solid var(--color-main-100);
+  border-bottom: 1px solid var(--color-main-700);
 
   background: transparent;
   width: 100%;
@@ -51,13 +52,13 @@ const StyledInput = styled.input`
   &:focus {
     border: none;
     outline: none;
-    border-bottom: 1px solid var(--color-main-700);
+    border-bottom: 1px solid var(--color-orange);
   }
 `;
 
 const StyledTextarea = styled.textarea`
   border: 0;
-  border-bottom: 1px solid var(--color-main-100);
+  border-bottom: 1px solid var(--color-main-700);
   background: transparent;
   width: 100%;
   padding: 0.8rem 0 0.5rem 0;
@@ -66,14 +67,10 @@ const StyledTextarea = styled.textarea`
 
   resize: none;
 
-  &::placeholder {
-    color: var(--color-main-100);
-  }
-
   &:focus {
     border: none;
     outline: none;
-    border-bottom: 1px solid var(--color-main-700);
+    border-bottom: 1px solid var(--color-orange);
   }
 `;
 
@@ -101,15 +98,28 @@ const StyledBtn = styled.button`
     border: 3px solid var(--color-main-700);
     background-color: transparent;
   }
+
+  &:disabled {
+    border: 3px solid var(--color-grey-400);
+    color: var(--color-grey-300);
+    background-color: var(--color-grey-400);
+  }
 `;
 
-const emailRegex = '^[w-.]+@([w-]+.)+[w-]{2,4}$';
+const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+const serviceId = 'service_h5xc6xi';
+const templateId = 'template_ph40a4c';
+const key = 'vgkVc0XkcC0bq13xg';
 
 function Contacts() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [title, setTitle] = useState('');
   const [emailBody, setEmailBody] = useState('');
+
+  const [error, setError] = useState('');
+  const [isDisabled, setIsDisabled] = useState(false);
 
   function reset() {
     setName('');
@@ -118,13 +128,41 @@ function Contacts() {
     setEmailBody('');
   }
 
+  console.log();
+
+  const validate = useCallback(
+    function validateFN() {
+      const isValidEmail = emailRegex.test(email);
+
+      const isValidName = name.length > 0;
+
+      return isValidName & isValidEmail;
+    },
+    [email, name.length]
+  );
+
+  useEffect(() => {
+    const check = validate();
+    setIsDisabled(check);
+  }, [name, email, validate]);
+
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(e.target);
-    console.log(emailBody);
+    if (emailBody.length < 10) {
+      return;
+    }
 
-    emailjs.sendForm('service_id', 'template_id', e.target, 'public_key');
+    try {
+      emailjs.sendForm(serviceId, templateId, e.target, key);
+
+      toast.success('Email was send successfully!');
+      reset();
+    } catch (err) {
+      console.error(err.message);
+      toast.error(err.message);
+      setError(err.message);
+    }
   }
 
   // style required messages and show allerts
@@ -136,8 +174,7 @@ function Contacts() {
           <StyledLabel>Full Name</StyledLabel>
           <StyledInput
             type='text'
-            placeholder='Denis Hristov'
-            required
+            name='name'
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -147,8 +184,8 @@ function Contacts() {
           <StyledLabel>Email</StyledLabel>
           <StyledInput
             type='email'
+            name='email'
             placeholder='email@example.com'
-            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -158,22 +195,22 @@ function Contacts() {
           <StyledLabel>Subject</StyledLabel>
           <StyledInput
             type='text'
-            placeholder='Hello Denis'
+            name='title'
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </StyledInputBox>
 
         <StyledInputBox>
-          <StyledLabel>Body</StyledLabel>
+          <StyledLabel>Message</StyledLabel>
           <StyledTextarea
             cols='55'
             rows='5'
-            placeholder='Message...'
+            name='message'
             value={emailBody}
             onChange={(e) => setEmailBody(e.target.value)}></StyledTextarea>
         </StyledInputBox>
-        <StyledBtn>Submit</StyledBtn>
+        <StyledBtn disabled={!isDisabled}>Submit</StyledBtn>
       </StyledForm>
     </StyledContacts>
   );

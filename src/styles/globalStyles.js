@@ -23,6 +23,11 @@ const GlobalStyles = createGlobalStyle`
 --color-main-500: #dbff70;
 --color-main-600: #d6ff5c;
 
+/* --color-main-700: #F5F5DC; */
+/* --color-main-700: #FF00FF; */
+/* --color-main-700: #E6E6FA; */
+/* --color-main-700: #FFD700; */
+/* --color-main-700: #FF7F50; */
 --color-main-700: #ccff33;
 
 --color-main-800: #b8e62e;
@@ -31,6 +36,8 @@ const GlobalStyles = createGlobalStyle`
 --color-main-2000: #7a991f;
 --color-main-3000: #66801a;
 --color-main-4000: #526614;
+
+--color-orange: #ffcc33;
 
 }
 
@@ -56,8 +63,9 @@ button {
   cursor: pointer;
 }
 
-*:disabled {
+button:disabled {
   cursor: not-allowed;
+  
 }
 
 ul {
