@@ -20,6 +20,17 @@ const StyledAppLayout = styled.div`
 
 const Main = styled.main`
   /* place-self: center; */
+  margin-left: auto;
+  margin-top: 2%;
+  margin-right: 7%;
+  /* background-color: red; */
+  height: 80vh;
+  width: 50%;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 function AppLayout() {

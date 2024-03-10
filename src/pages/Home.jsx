@@ -3,10 +3,11 @@ import { MainButton, StyledNavLink } from '../ui/NavLink';
 
 const StyledHomePage = styled.div`
   margin-left: auto;
-  margin-right: 17%;
-  margin-top: 5%;
+  margin-right: auto;
+  margin-top: 4.8rem;
+  /* background-color: blue; */
   padding: 2.4rem 1.2rem;
-  width: 30%;
+  width: 60%;
   height: 50rem;
   display: flex;
   flex-direction: column;

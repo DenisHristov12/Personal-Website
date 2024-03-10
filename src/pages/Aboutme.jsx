@@ -1,109 +1,138 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-const StyledAbout = styled.section`
-  width: 50%;
-  height: 70vh;
+import { SlMouse, SlArrowDown, SlArrowUp } from 'react-icons/sl';
 
-  margin-left: auto;
-  margin-right: 8%;
-  margin-top: 5%;
+const fadeIn = keyframes`
+0%{
+  translate: 50rem;
+  scale: 0.1;
+  opacity: 0;
+}
 
-  padding: 2.4rem;
+50%{
+  translate: 0rem;
+  scale: 1;
+  opacity: 1;
+}
 
-  /* display: grid;
-  grid-template-columns: 1.5fr 1fr; */
+100%{
+  translate: 50rem;
+  scale: 0.1;
+  opacity: 0;
+}
+`;
+
+const StyledSection = styled.section`
+  border-left: 5px solid var(--color-main-700);
+
+  & svg {
+    margin-left: -4rem;
+    width: 2.4rem;
+    height: 2.4rem;
+
+    color: var(--color-main-700);
+  }
+`;
+
+const StyledTextBox = styled.div`
+  /* background-color: aliceblue; */
+  height: 80vh;
+
+  margin: 0% 10%;
+
+  padding: 3.6rem 4.8rem;
+
   display: flex;
   flex-direction: column;
-  flex-wrap: unset;
 
-  /* grid-template-columns: 1fr; */
-
+  align-items: start;
   justify-content: center;
-  /* align-content: center;
-
-  align-items: center; */
-  justify-items: center;
-
-  /* row-gap: 3.6rem;
-  column-gap: 2.4rem; */
 
   gap: 4.8rem;
 
-  border-left: 5px solid var(--color-main-700);
-
   overflow: scroll;
+
+  animation: ${fadeIn} linear;
+  animation-timeline: view(y);
 
   &::-webkit-scrollbar {
     display: none;
   }
 `;
 
-const StyledTextBox = styled.div`
-  width: 100%;
+const StyledH2 = styled.h2`
+  color: var(--color-main-700);
+  font-weight: 600;
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
 `;
 
 const StyledP = styled.p`
   color: var(--color-main-100);
 
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 500;
 
   letter-spacing: 0.1rem;
-`;
-
-const StyledSpan = styled.span`
-  text-transform: uppercase;
 
   display: inline-block;
-
-  border-bottom: 1px solid var(--color-main-700);
 `;
+
+const info = [
+  {
+    heading: 'My education',
+    content:
+      'Hello, My name is Denis and I am currently a student at Technical University of Sofia, first year bacchelor degree of cybersecurity. Before university I have graduated Vocational High School of Computer Technologies and Systems at Pravets, where I got all of my programming basics at many different languages.',
+  },
+  {
+    heading: 'What I love to do',
+    content:
+      'My passion is Front-End development. I really love making the functionality of the website work and also i enjoy designing websites that are created by me.',
+  },
+  {
+    heading: 'About my experience in the world of programming',
+
+    content:
+      'About 2 years ago I started learning JavaScript. That is when i realised that JavaScript together with HTML and CSS are the languages I want to improve my skills at. Later on, after developing my JavaScript skills, I wanted to expand my skills, so what is when I started learning React. Really enjoyed learning about how React works and I am currently developing my skills at it.',
+  },
+  {
+    heading: 'My scoial skills',
+    content:
+      'I am ambitious, opened to learning new technologies and also i am a fast learner! I like to work in a team because of the skills, advices and support that the other people can exchange with you!',
+  },
+];
 
 function Aboutme() {
   return (
-    <StyledAbout>
-      <StyledTextBox>
-        <h1>My education</h1>
-        <StyledP>
-          Hello, My name is Denis and I am currently a student at Technical
-          University of Sofia, first year bachelor degree of{' '}
-          <StyledSpan>cybersecurity</StyledSpan>. Before university I have
-          graduated Vocational High School of Computer Technologies and Systems
-          at Pravets, where i got all of my programming basics at many different
-          languages.
-        </StyledP>
-      </StyledTextBox>
-
-      <StyledTextBox>
-        <h1>What I love to do</h1>
-        <StyledP>
-          My passion is Front-End development. I really love making the
-          functionality of the website work and also I like to design the
-          websites that are created by me.
-        </StyledP>
-      </StyledTextBox>
-
-      <StyledTextBox>
-        <h1>About my experience in the world of programming</h1>
-        <StyledP>
-          About 2 years ago I started learning JavaScript. That is when I
-          realised that JavaScript together with HTML and CSS are the languages
-          I want improve my skills at. Later on, after developing my JavaScript
-          skills, I wanted to expand my skills, so that is when I started
-          learning <StyledSpan>React</StyledSpan>. Really enjoyed learning about
-          how React works and I am currently developing my skills at it.
-        </StyledP>
-      </StyledTextBox>
-
-      <StyledTextBox>
-        <h1>My scoial skills</h1>
-        <StyledP>
-          I am ambitious, opened to learning new technologies and also I am a
-          fast learner! I like to work in a team because of the skills, advices
-          and support that the other people can exchange with you!
-        </StyledP>
-      </StyledTextBox>
-    </StyledAbout>
+    <StyledSection>
+      <SlArrowUp
+        style={{
+          position: 'absolute',
+          top: '47%',
+          transform: 'translateY(-47%)',
+        }}
+      />
+      <SlMouse
+        style={{
+          position: 'absolute',
+          top: '50%',
+          transform: 'translateY(-50%)',
+        }}
+      />
+      <SlArrowDown
+        style={{
+          position: 'absolute',
+          top: '53%',
+          transform: 'translateY(-53%)',
+        }}
+      />
+      {info.map((el) => (
+        <StyledTextBox key={el.heading}>
+          <StyledH2>{el.heading}</StyledH2>
+          <StyledP>{el.content}</StyledP>
+        </StyledTextBox>
+      ))}
+    </StyledSection>
   );
 }
 

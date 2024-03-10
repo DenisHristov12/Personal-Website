@@ -4,21 +4,18 @@ import toast from 'react-hot-toast';
 import styled from 'styled-components';
 
 const StyledContacts = styled.section`
-  /* background-color: red; */
+  /* background-color: blue; */
 
-  width: 50%;
-  height: 75vh;
-
-  margin-left: auto;
-  margin-right: 8%;
-  margin-top: 3%;
-
+  width: 90%;
+  height: 100%;
+  /* margin: 1.2rem auto; */
   padding: 2.4rem 5.2rem;
 
   border-left: 5px solid var(--color-main-700);
 `;
 
 const StyledForm = styled.form`
+  margin: 1.2rem 4.8rem;
   display: flex;
   flex-direction: column;
   gap: 3.6rem;
@@ -71,6 +68,10 @@ const StyledTextarea = styled.textarea`
     border: none;
     outline: none;
     border-bottom: 1px solid var(--color-orange);
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 `;
 
