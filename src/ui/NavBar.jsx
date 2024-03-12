@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 import { StyledNavLink } from './NavLink';
 
+import {
+  MdInfoOutline,
+  MdHome,
+  MdContactMail,
+  MdAutoFixHigh,
+} from 'react-icons/md';
+
 const StyledNav = styled.nav`
   width: 100%;
   height: 10%;
@@ -61,16 +68,24 @@ function NavBar() {
       </StyledDiv>
       <StyledUl>
         <li>
-          <StyledNavLink to='/home'>Home</StyledNavLink>
+          <StyledNavLink to='/home'>
+            <MdHome /> Home
+          </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to='/about'>About me</StyledNavLink>
+          <StyledNavLink to='/about'>
+            <MdInfoOutline /> About
+          </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to='/skills'>Skills</StyledNavLink>
+          <StyledNavLink to='/skills'>
+            <MdAutoFixHigh /> Skills
+          </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to='/contacts'>Contact me</StyledNavLink>
+          <StyledNavLink to='/contacts'>
+            <MdContactMail /> Contacts
+          </StyledNavLink>
         </li>
       </StyledUl>
     </StyledNav>

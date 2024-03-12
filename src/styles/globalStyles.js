@@ -39,25 +39,6 @@ const GlobalStyles = createGlobalStyle`
 
 --color-orange: #ffcc33;
 
-.slide-in {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #ccff33;
-  transform-origin: bottom;
-}
-
-.slide-out {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #ccff33;
-  transform-origin: top;
-}
 
 }
 
@@ -78,7 +59,7 @@ body {
 
   line-height: 1.5;
 
-
+overflow: hidden;
 }
 
 button {

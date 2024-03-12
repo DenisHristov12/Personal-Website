@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import transition from '../utils/Transition';
+import { motion } from 'framer-motion';
 
 const StyledSection = styled.section`
   border-left: 5px solid var(--color-main-700);
@@ -41,27 +41,32 @@ const StyledSpan = styled.span`
 
 function Skills() {
   return (
-    <StyledSection>
-      <StyledSkill colorFrom='#e34c26' colorTo='#fff'>
-        <StyledSpan>HTML</StyledSpan>
-      </StyledSkill>
-      <StyledSkill colorFrom='#264de4' colorTo='#fff'>
-        <StyledSpan>CSS</StyledSpan>
-      </StyledSkill>
-      <StyledSkill colorFrom='#f0db4f' colorTo='#323330'>
-        <StyledSpan>JavaScript</StyledSpan>
-      </StyledSkill>
-      <StyledSkill colorFrom='#61DBFB' colorTo='#1c2c4c'>
-        <StyledSpan>React</StyledSpan>
-      </StyledSkill>
-      <StyledSkill colorFrom='#ffde57' colorTo='#4584b6'>
-        <StyledSpan>Python</StyledSpan>
-      </StyledSkill>
-      <StyledSkill colorFrom='#00758F' colorTo='#F29111'>
-        <StyledSpan>SQL</StyledSpan>
-      </StyledSkill>
-    </StyledSection>
+    <motion.div
+      initial={{ width: 0 }}
+      animate={{ width: '100%' }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
+      <StyledSection>
+        <StyledSkill colorFrom='#e34c26' colorTo='#fff'>
+          <StyledSpan>HTML</StyledSpan>
+        </StyledSkill>
+        <StyledSkill colorFrom='#264de4' colorTo='#fff'>
+          <StyledSpan>CSS</StyledSpan>
+        </StyledSkill>
+        <StyledSkill colorFrom='#f0db4f' colorTo='#323330'>
+          <StyledSpan>JavaScript</StyledSpan>
+        </StyledSkill>
+        <StyledSkill colorFrom='#61DBFB' colorTo='#1c2c4c'>
+          <StyledSpan>React</StyledSpan>
+        </StyledSkill>
+        <StyledSkill colorFrom='#ffde57' colorTo='#4584b6'>
+          <StyledSpan>Python</StyledSpan>
+        </StyledSkill>
+        <StyledSkill colorFrom='#00758F' colorTo='#F29111'>
+          <StyledSpan>SQL</StyledSpan>
+        </StyledSkill>
+      </StyledSection>
+    </motion.div>
   );
 }
 
-export default transition(Skills);
+export default Skills;

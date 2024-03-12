@@ -1,7 +1,9 @@
 import styled, { keyframes } from 'styled-components';
 
 import { SlMouse, SlArrowDown, SlArrowUp } from 'react-icons/sl';
-import transition from '../utils/Transition';
+
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const fadeIn = keyframes`
 0%{
@@ -25,6 +27,8 @@ const fadeIn = keyframes`
 
 const StyledSection = styled.section`
   border-left: 5px solid var(--color-main-700);
+
+  /* background-color: red; */
 
   & svg {
     margin-left: -4rem;
@@ -79,6 +83,26 @@ const StyledP = styled.p`
   display: inline-block;
 `;
 
+const StyledSocials = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  width: 4.4rem;
+
+  & svg {
+    color: var(--color-main-700);
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  /* background-color: red; */
+  transform: translate(0%, -50%);
+`;
+
 const info = [
   {
     heading: 'My education',
@@ -104,37 +128,44 @@ const info = [
 ];
 
 function Aboutme() {
+  const [iconsLoaded, setIconsLoaded] = useState(false);
+
+  useEffect(() => {
+    const loadIcons = async () => {
+      // Simulate icon loading delay
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
+      // Set iconsLoaded to true after loading
+      setIconsLoaded(true);
+    };
+
+    loadIcons();
+  }, []);
+
   return (
-    <StyledSection>
-      <SlArrowUp
-        style={{
-          position: 'absolute',
-          top: '47%',
-          transform: 'translateY(-47%)',
-        }}
-      />
-      <SlMouse
-        style={{
-          position: 'absolute',
-          top: '50%',
-          transform: 'translateY(-50%)',
-        }}
-      />
-      <SlArrowDown
-        style={{
-          position: 'absolute',
-          top: '53%',
-          transform: 'translateY(-53%)',
-        }}
-      />
-      {info.map((el) => (
-        <StyledTextBox key={el.heading}>
-          <StyledH2>{el.heading}</StyledH2>
-          <StyledP>{el.content}</StyledP>
-        </StyledTextBox>
-      ))}
-    </StyledSection>
+    <motion.div
+      initial={{ width: 0 }}
+      animate={{ width: '100%' }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
+      {iconsLoaded && (
+        <>
+          <StyledSocials>
+            <SlArrowUp />
+            <SlMouse />
+            <SlArrowDown />
+          </StyledSocials>
+          <StyledSection>
+            {info.map((el) => (
+              <StyledTextBox key={el.heading}>
+                <StyledH2>{el.heading}</StyledH2>
+                <StyledP>{el.content}</StyledP>
+              </StyledTextBox>
+            ))}
+          </StyledSection>
+        </>
+      )}
+    </motion.div>
   );
 }
 
-export default transition(Aboutme);
+export default Aboutme;

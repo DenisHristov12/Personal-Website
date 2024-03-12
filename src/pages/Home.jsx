@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { MainButton } from '../ui/NavLink';
 import { SlArrowRightCircle } from 'react-icons/sl';
-import transition from '../utils/Transition';
+
+import { motion } from 'framer-motion';
 
 const StyledHomePage = styled.div`
   margin-left: auto;
@@ -31,13 +32,19 @@ const StyledH1 = styled.h1`
 
 function Home() {
   return (
-    <StyledHomePage>
-      <StyledH1>Welcome to Denis Hristov's website!</StyledH1>
-      <MainButton to='/about'>
-        See more <SlArrowRightCircle />
-      </MainButton>
-    </StyledHomePage>
+    <motion.div
+      initial={{ x: '-100%' }}
+      animate={{ x: 0 }}
+      exit={{ x: '100%' }}
+      transition={{ duration: 0.5 }}>
+      <StyledHomePage>
+        <StyledH1>Welcome to Denis Hristov's website!</StyledH1>
+        <MainButton to='/about'>
+          See more <SlArrowRightCircle />
+        </MainButton>
+      </StyledHomePage>
+    </motion.div>
   );
 }
 
-export default transition(Home);
+export default Home;

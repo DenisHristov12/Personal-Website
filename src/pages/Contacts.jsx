@@ -5,7 +5,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { ImGithub, ImLinkedin, ImFilePdf } from 'react-icons/im';
-import transition from '../utils/Transition';
+
+import { motion } from 'framer-motion';
 
 const StyledSection = styled.section`
   display: flex;
@@ -218,70 +219,75 @@ function Contacts() {
   }
 
   return (
-    <StyledSection>
-      <StyledSocials>
-        <StyledLink to={linkedIn} target='_blank'>
-          <ImLinkedin />
-        </StyledLink>
-        <StyledLink to={gitHub} target='_blank'>
-          <ImGithub />
-        </StyledLink>
-        <StyledLink
-          to='route'
-          onClick={(event) => {
-            event.preventDefault();
-            window.open(cvPath);
-          }}>
-          <ImFilePdf />
-        </StyledLink>
-      </StyledSocials>
-      <StyledContacts>
-        <StyledForm onSubmit={handleSubmit}>
-          <StyledInputBox>
-            <StyledLabel>Full Name</StyledLabel>
-            <StyledInput
-              type='text'
-              name='name'
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </StyledInputBox>
+    <motion.div
+      initial={{ width: 0 }}
+      animate={{ width: '100%' }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
+      <StyledSection>
+        <StyledSocials>
+          <StyledLink to={linkedIn} target='_blank'>
+            <ImLinkedin />
+          </StyledLink>
+          <StyledLink to={gitHub} target='_blank'>
+            <ImGithub />
+          </StyledLink>
+          <StyledLink
+            to='route'
+            onClick={(event) => {
+              event.preventDefault();
+              window.open(cvPath);
+            }}>
+            <ImFilePdf />
+          </StyledLink>
+        </StyledSocials>
+        <StyledContacts>
+          <StyledForm onSubmit={handleSubmit}>
+            <StyledInputBox>
+              <StyledLabel>Full Name</StyledLabel>
+              <StyledInput
+                type='text'
+                name='name'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </StyledInputBox>
 
-          <StyledInputBox>
-            <StyledLabel>Email</StyledLabel>
-            <StyledInput
-              type='email'
-              name='email'
-              placeholder='email@example.com'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </StyledInputBox>
+            <StyledInputBox>
+              <StyledLabel>Email</StyledLabel>
+              <StyledInput
+                type='email'
+                name='email'
+                placeholder='email@example.com'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </StyledInputBox>
 
-          <StyledInputBox>
-            <StyledLabel>Subject</StyledLabel>
-            <StyledInput
-              type='text'
-              name='title'
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </StyledInputBox>
+            <StyledInputBox>
+              <StyledLabel>Subject</StyledLabel>
+              <StyledInput
+                type='text'
+                name='title'
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </StyledInputBox>
 
-          <StyledInputBox>
-            <StyledLabel>Message</StyledLabel>
-            <StyledTextarea
-              cols='55'
-              rows='5'
-              name='message'
-              value={emailBody}
-              onChange={(e) => setEmailBody(e.target.value)}></StyledTextarea>
-          </StyledInputBox>
-          <StyledBtn disabled={!isDisabled}>Submit</StyledBtn>
-        </StyledForm>
-      </StyledContacts>
-    </StyledSection>
+            <StyledInputBox>
+              <StyledLabel>Message</StyledLabel>
+              <StyledTextarea
+                cols='55'
+                rows='5'
+                name='message'
+                value={emailBody}
+                onChange={(e) => setEmailBody(e.target.value)}></StyledTextarea>
+            </StyledInputBox>
+            <StyledBtn disabled={!isDisabled}>Submit</StyledBtn>
+          </StyledForm>
+        </StyledContacts>
+      </StyledSection>
+    </motion.div>
   );
 }
 
-export default transition(Contacts);
+export default Contacts;
