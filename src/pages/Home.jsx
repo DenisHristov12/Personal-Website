@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { MainButton, StyledNavLink } from '../ui/NavLink';
+import { MainButton } from '../ui/NavLink';
+import { SlArrowRightCircle } from 'react-icons/sl';
 
 const StyledHomePage = styled.div`
   margin-left: auto;
@@ -31,8 +32,8 @@ function Home() {
   return (
     <StyledHomePage>
       <StyledH1>Welcome to Denis Hristov's website!</StyledH1>
-      <MainButton to='/about' variant='mainButton'>
-        See more
+      <MainButton to='/about'>
+        See more <SlArrowRightCircle />
       </MainButton>
     </StyledHomePage>
   );

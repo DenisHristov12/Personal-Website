@@ -2,8 +2,56 @@ import emailjs from '@emailjs/browser';
 import { useCallback, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const StyledContacts = styled.section`
+import { ImGithub, ImLinkedin, ImFilePdf } from 'react-icons/im';
+
+const StyledSection = styled.section`
+  display: flex;
+  align-items: center;
+  /* flex-direction: row-reverse; */
+
+  /* background-color: blue; */
+
+  gap: 0.8rem;
+
+  /* background-color: aliceblue; */
+`;
+
+const StyledSocials = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  width: 4.4rem;
+
+  /* background-color: red; */
+`;
+
+const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-main-700);
+
+  font-size: 2.4rem;
+  text-decoration: none;
+
+  & svg {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &:hover {
+    /* background-color: aliceblue; */
+    transform: scale(1.3);
+    overflow: visible;
+
+    transition: all 0.5s;
+  }
+`;
+
+const StyledContacts = styled.div`
   /* background-color: blue; */
 
   width: 90%;
@@ -107,6 +155,10 @@ const StyledBtn = styled.button`
   }
 `;
 
+const linkedIn = 'https://www.linkedin.com/in/denis-hristov-73a859274/';
+const gitHub = 'https://github.com/DenisHristov12';
+const cvPath = 'Denis_Hristov_CV.pdf';
+
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
 const serviceId = 'service_h5xc6xi';
@@ -128,8 +180,6 @@ function Contacts() {
     setTitle('');
     setEmailBody('');
   }
-
-  console.log();
 
   const validate = useCallback(
     function validateFN() {
@@ -166,54 +216,70 @@ function Contacts() {
     }
   }
 
-  // style required messages and show allerts
-
   return (
-    <StyledContacts>
-      <StyledForm onSubmit={handleSubmit}>
-        <StyledInputBox>
-          <StyledLabel>Full Name</StyledLabel>
-          <StyledInput
-            type='text'
-            name='name'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </StyledInputBox>
+    <StyledSection>
+      <StyledSocials>
+        <StyledLink to={linkedIn} target='_blank'>
+          <ImLinkedin />
+        </StyledLink>
+        <StyledLink to={gitHub} target='_blank'>
+          <ImGithub />
+        </StyledLink>
+        <StyledLink
+          to='route'
+          onClick={(event) => {
+            event.preventDefault();
+            window.open(cvPath);
+          }}>
+          <ImFilePdf />
+        </StyledLink>
+      </StyledSocials>
+      <StyledContacts>
+        <StyledForm onSubmit={handleSubmit}>
+          <StyledInputBox>
+            <StyledLabel>Full Name</StyledLabel>
+            <StyledInput
+              type='text'
+              name='name'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </StyledInputBox>
 
-        <StyledInputBox>
-          <StyledLabel>Email</StyledLabel>
-          <StyledInput
-            type='email'
-            name='email'
-            placeholder='email@example.com'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </StyledInputBox>
+          <StyledInputBox>
+            <StyledLabel>Email</StyledLabel>
+            <StyledInput
+              type='email'
+              name='email'
+              placeholder='email@example.com'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </StyledInputBox>
 
-        <StyledInputBox>
-          <StyledLabel>Subject</StyledLabel>
-          <StyledInput
-            type='text'
-            name='title'
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </StyledInputBox>
+          <StyledInputBox>
+            <StyledLabel>Subject</StyledLabel>
+            <StyledInput
+              type='text'
+              name='title'
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </StyledInputBox>
 
-        <StyledInputBox>
-          <StyledLabel>Message</StyledLabel>
-          <StyledTextarea
-            cols='55'
-            rows='5'
-            name='message'
-            value={emailBody}
-            onChange={(e) => setEmailBody(e.target.value)}></StyledTextarea>
-        </StyledInputBox>
-        <StyledBtn disabled={!isDisabled}>Submit</StyledBtn>
-      </StyledForm>
-    </StyledContacts>
+          <StyledInputBox>
+            <StyledLabel>Message</StyledLabel>
+            <StyledTextarea
+              cols='55'
+              rows='5'
+              name='message'
+              value={emailBody}
+              onChange={(e) => setEmailBody(e.target.value)}></StyledTextarea>
+          </StyledInputBox>
+          <StyledBtn disabled={!isDisabled}>Submit</StyledBtn>
+        </StyledForm>
+      </StyledContacts>
+    </StyledSection>
   );
 }
 

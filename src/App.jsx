@@ -2,8 +2,8 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import AppLayout from './ui/AppLayout';
 import Home from './pages/Home';
 import Contacts from './pages/Contacts';
-import Aboutme from './pages/aboutme';
-import Skills from './pages/skills';
+import Aboutme from './pages/Aboutme';
+import Skills from './pages/Skills';
 import PageNotFound from './pages/PageNotFound';
 import GlobalStyles from './styles/globalStyles';
 

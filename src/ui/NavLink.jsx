@@ -52,6 +52,8 @@ export const StyledNavLink = styled(NavLink)`
 `;
 
 export const MainButton = styled(StyledNavLink)`
+  display: flex;
+  align-items: center;
   width: 24rem;
 
   padding: 1.2rem 2.4rem;
