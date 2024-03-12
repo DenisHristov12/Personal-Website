@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
 import { SlMouse, SlArrowDown, SlArrowUp } from 'react-icons/sl';
+import transition from '../utils/Transition';
 
 const fadeIn = keyframes`
 0%{
@@ -136,4 +137,4 @@ function Aboutme() {
   );
 }
 
-export default Aboutme;
+export default transition(Aboutme);

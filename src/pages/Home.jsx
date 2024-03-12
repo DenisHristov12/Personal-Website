@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { MainButton } from '../ui/NavLink';
 import { SlArrowRightCircle } from 'react-icons/sl';
+import transition from '../utils/Transition';
 
 const StyledHomePage = styled.div`
   margin-left: auto;
@@ -39,4 +40,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default transition(Home);

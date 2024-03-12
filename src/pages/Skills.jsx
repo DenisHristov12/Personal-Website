@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import transition from '../utils/Transition';
 
 const StyledSection = styled.section`
   border-left: 5px solid var(--color-main-700);
@@ -63,4 +64,4 @@ function Skills() {
   );
 }
 
-export default Skills;
+export default transition(Skills);

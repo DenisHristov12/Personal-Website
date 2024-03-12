@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { ImGithub, ImLinkedin, ImFilePdf } from 'react-icons/im';
+import transition from '../utils/Transition';
 
 const StyledSection = styled.section`
   display: flex;
@@ -283,4 +284,4 @@ function Contacts() {
   );
 }
 
-export default Contacts;
+export default transition(Contacts);
