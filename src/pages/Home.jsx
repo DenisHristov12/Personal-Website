@@ -1,34 +1,10 @@
-import styled from 'styled-components';
-import { MainButton } from '../ui/NavLink';
-import { SlArrowRightCircle } from 'react-icons/sl';
-
 import { motion } from 'framer-motion';
 
-const StyledHomePage = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4.8rem;
-  /* background-color: blue; */
-  padding: 2.4rem 1.2rem;
-  width: 60%;
-  height: 50rem;
-  display: flex;
-  flex-direction: column;
+import { SlArrowRightCircle } from 'react-icons/sl';
 
-  align-items: center;
-  justify-content: space-around;
-
-  border: 5px solid var(--color-main-800);
-`;
-
-const StyledH1 = styled.h1`
-  font-size: 5.2rem;
-  display: inline-block;
-  font-weight: 700;
-  text-align: center;
-
-  color: var(--color-main-100);
-`;
+import { MainButton } from '../ui/NavLink';
+import { StyledHomePage } from '../ui/StyledHome';
+import { StyledH1 } from '../ui/Heading1';
 
 function Home() {
   return (

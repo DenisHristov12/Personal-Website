@@ -53,6 +53,11 @@ export const MainButton = styled(StyledNavLink)`
   font-size: 2rem;
   font-weight: 600;
 
+  @media (max-width: 64em) {
+    font-size: 1.8rem;
+    padding: 0.8rem 1.6rem;
+  }
+
   &:link,
   &:visited {
     color: var(--color-grey-900);

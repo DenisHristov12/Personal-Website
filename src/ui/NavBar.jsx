@@ -1,17 +1,18 @@
 import styled from 'styled-components';
-import { StyledNavLink } from './NavLink';
 
-import { MdMenu } from 'react-icons/md';
+import { StyledNavLink } from './NavLink';
 
 import {
   MdInfoOutline,
   MdHome,
   MdContactMail,
   MdAutoFixHigh,
+  MdMenu,
 } from 'react-icons/md';
+import { useEffect, useState } from 'react';
 
 const StyledNav = styled.nav`
-  width: 100%;
+  max-width: 100%;
   height: 10%;
   padding: 0 2.4rem;
 
@@ -42,12 +43,33 @@ const StyledSpanFirstLast = styled(StyledSpan)`
 
 const StyledUl = styled.ul`
   height: 100%;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   gap: 4.8rem;
+
+  /* @media (max-width: 64em) {
+    display: none;
+  } */
+
+  display: ${(props) => (props.showmenu ? 'flex' : 'none')};
 `;
 
 function NavBar() {
+  const [showMenu, setShowMenu] = useState(true);
+
+  // const windowWidth = window.innerWidth;
+
+  // useEffect(
+  //   function () {
+  //     if (windowWidth < 1020) {
+  //       setShowMenu((menu) => !menu);
+  //     }
+  //   },
+  //   [windowWidth]
+  // );
+
+  // console.log(showMenu);
+
   return (
     <StyledNav>
       <StyledDiv>
@@ -68,7 +90,7 @@ function NavBar() {
           <StyledSpanFirstLast>V</StyledSpanFirstLast>
         </StyledDivSecond>
       </StyledDiv>
-      <StyledUl>
+      <StyledUl showmenu={showMenu}>
         <li>
           <StyledNavLink to='/home'>
             <MdHome /> Home

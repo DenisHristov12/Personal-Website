@@ -4,7 +4,7 @@ import { useMoveBack } from '../hooks/useMoveBack';
 
 const StyledPageNotFound = styled.main`
   height: 100vh;
-  background-color: #d5d5d5; //var(--color-grey-50)
+  background-color: var(--color-grey-100);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,9 +44,7 @@ function PageNotFound() {
       <Box>
         <h1>The page you are looking for could not be found 😢</h1>
         <p>Click the button below to return to the previous page!</p>
-        <Button
-          onClick={moveBack}
-          size="large">
+        <Button onClick={moveBack} size='large'>
           &larr;
         </Button>
       </Box>

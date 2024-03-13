@@ -1,104 +1,16 @@
 import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { SlMouse, SlArrowDown, SlArrowUp } from 'react-icons/sl';
 
-import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-
-const fadeIn = keyframes`
-0%{
-  translate: 50rem;
-  scale: 0.1;
-  opacity: 0;
-}
-
-50%{
-  translate: 0rem;
-  scale: 1;
-  opacity: 1;
-}
-
-100%{
-  translate: 50rem;
-  scale: 0.1;
-  opacity: 0;
-}
-`;
+import { StyledIcons } from '../ui/StyledIcons';
+import { StyledTextBox } from '../ui/StyledTextBox';
+import { StyledH2 } from '../ui/StyledHeadingSecondary';
+import { StyledP } from '../ui/StyledParagraph';
 
 const StyledSection = styled.section`
   border-left: 5px solid var(--color-main-700);
-
-  display: inline-block;
-
-  & svg {
-    margin-left: -4rem;
-    width: 2.4rem;
-    height: 2.4rem;
-
-    color: var(--color-main-700);
-  }
-`;
-
-const StyledSocials = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-
-  width: 4.4rem;
-
-  & svg {
-    color: var(--color-main-700);
-    width: 2.4rem;
-    height: 2.4rem;
-  }
-
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  transform: translate(0%, -50%);
-`;
-
-const StyledTextBox = styled.div`
-  height: 80vh;
-
-  margin: 0% 10%;
-
-  padding: 3.6rem 4.8rem;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: start;
-  justify-content: center;
-
-  gap: 4.8rem;
-
-  overflow: scroll;
-
-  animation: ${fadeIn} linear;
-  animation-timeline: view(y);
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
-const StyledH2 = styled.h2`
-  color: var(--color-main-700);
-  font-weight: 600;
-  font-size: 2.8rem;
-  margin-bottom: 1.2rem;
-`;
-
-const StyledP = styled.p`
-  color: var(--color-main-100);
-
-  font-size: 1.8rem;
-  font-weight: 500;
-
-  letter-spacing: 0.1rem;
-
-  display: inline-block;
 `;
 
 const info = [
@@ -130,10 +42,8 @@ function Aboutme() {
 
   useEffect(() => {
     const loadIcons = async () => {
-      // Simulate icon loading delay
       await new Promise((resolve) => setTimeout(resolve, 500));
 
-      // Set iconsLoaded to true after loading
       setIconsLoaded(true);
     };
 
@@ -143,11 +53,11 @@ function Aboutme() {
   return (
     iconsLoaded && (
       <>
-        <StyledSocials>
+        <StyledIcons>
           <SlArrowUp />
           <SlMouse />
           <SlArrowDown />
-        </StyledSocials>
+        </StyledIcons>
         <motion.div
           initial={{ opacity: 0, x: '-100%' }}
           animate={{ opacity: 1, x: '0%' }}
