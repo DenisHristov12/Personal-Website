@@ -18,7 +18,7 @@ const StyledHomePage = styled.div`
   align-items: center;
   justify-content: space-around;
 
-  border: 5px solid var(--color-main-700);
+  border: 5px solid var(--color-main-800);
 `;
 
 const StyledH1 = styled.h1`
@@ -33,9 +33,9 @@ const StyledH1 = styled.h1`
 function Home() {
   return (
     <motion.div
-      initial={{ x: '-100%' }}
-      animate={{ x: 0 }}
-      exit={{ x: '100%' }}
+      initial={{ opacity: 0, x: '-100%' }}
+      animate={{ opacity: 1, x: '0%' }}
+      exit={{ opacity: 0, x: '100%' }}
       transition={{ duration: 0.5 }}>
       <StyledHomePage>
         <StyledH1>Welcome to Denis Hristov's website!</StyledH1>

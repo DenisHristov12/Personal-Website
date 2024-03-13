@@ -99,7 +99,7 @@ const StyledInput = styled.input`
   &:focus {
     border: none;
     outline: none;
-    border-bottom: 1px solid var(--color-orange);
+    border-bottom: 1px solid var(--color-accent-100);
   }
 `;
 
@@ -117,7 +117,7 @@ const StyledTextarea = styled.textarea`
   &:focus {
     border: none;
     outline: none;
-    border-bottom: 1px solid var(--color-orange);
+    border-bottom: 1px solid var(--color-accent-100);
   }
 
   &::-webkit-scrollbar {
@@ -220,9 +220,10 @@ function Contacts() {
 
   return (
     <motion.div
-      initial={{ width: 0 }}
-      animate={{ width: '100%' }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
+      initial={{ opacity: 0, x: '-100%' }}
+      animate={{ opacity: 1, x: '0%' }}
+      exit={{ opacity: 0, x: '100%' }}
+      transition={{ duration: 0.5 }}>
       <StyledSection>
         <StyledSocials>
           <StyledLink to={linkedIn} target='_blank'>

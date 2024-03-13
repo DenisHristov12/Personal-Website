@@ -28,7 +28,7 @@ const fadeIn = keyframes`
 const StyledSection = styled.section`
   border-left: 5px solid var(--color-main-700);
 
-  /* background-color: red; */
+  display: inline-block;
 
   & svg {
     margin-left: -4rem;
@@ -39,8 +39,26 @@ const StyledSection = styled.section`
   }
 `;
 
+const StyledSocials = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  width: 4.4rem;
+
+  & svg {
+    color: var(--color-main-700);
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(0%, -50%);
+`;
+
 const StyledTextBox = styled.div`
-  /* background-color: aliceblue; */
   height: 80vh;
 
   margin: 0% 10%;
@@ -83,26 +101,6 @@ const StyledP = styled.p`
   display: inline-block;
 `;
 
-const StyledSocials = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-
-  width: 4.4rem;
-
-  & svg {
-    color: var(--color-main-700);
-    width: 2.4rem;
-    height: 2.4rem;
-  }
-
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  /* background-color: red; */
-  transform: translate(0%, -50%);
-`;
-
 const info = [
   {
     heading: 'My education',
@@ -143,17 +141,18 @@ function Aboutme() {
   }, []);
 
   return (
-    <motion.div
-      initial={{ width: 0 }}
-      animate={{ width: '100%' }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
-      {iconsLoaded && (
-        <>
-          <StyledSocials>
-            <SlArrowUp />
-            <SlMouse />
-            <SlArrowDown />
-          </StyledSocials>
+    iconsLoaded && (
+      <>
+        <StyledSocials>
+          <SlArrowUp />
+          <SlMouse />
+          <SlArrowDown />
+        </StyledSocials>
+        <motion.div
+          initial={{ opacity: 0, x: '-100%' }}
+          animate={{ opacity: 1, x: '0%' }}
+          exit={{ opacity: 0, x: '100%' }}
+          transition={{ duration: 0.5 }}>
           <StyledSection>
             {info.map((el) => (
               <StyledTextBox key={el.heading}>
@@ -162,9 +161,9 @@ function Aboutme() {
               </StyledTextBox>
             ))}
           </StyledSection>
-        </>
-      )}
-    </motion.div>
+        </motion.div>
+      </>
+    )
   );
 }
 

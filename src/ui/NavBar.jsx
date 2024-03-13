@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { StyledNavLink } from './NavLink';
 
+import { MdMenu } from 'react-icons/md';
+
 import {
   MdInfoOutline,
   MdHome,

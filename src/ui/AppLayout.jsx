@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import NavBar from './NavBar';
 
 const BackgroundImg = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url('full.JPG');
   /* background-image: url('full.JPG'); */
   background-size: cover;

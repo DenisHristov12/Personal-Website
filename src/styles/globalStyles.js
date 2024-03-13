@@ -15,7 +15,6 @@ const GlobalStyles = createGlobalStyle`
 --color-grey-800: #1f2937;
 --color-grey-900: #111827;
 
-
 --color-main-100: #f0ffc2;
 --color-main-200: #ebffad;
 --color-main-300: #e6ff99;
@@ -37,7 +36,16 @@ const GlobalStyles = createGlobalStyle`
 --color-main-3000: #66801a;
 --color-main-4000: #526614;
 
---color-orange: #ffcc33;
+--color-accent-100: #ffcc33;
+
+
+/* --color-main-100: #FFECB3;
+--color-main-700: #FFD700; 
+--color-main-800: #B29040;
+
+--color-accent-100: #FF6347 ;
+--color-accent-200: #8B4513 ; */
+
 
 
 }

@@ -35,9 +35,9 @@ export const StyledNavLink = styled(NavLink)`
     color: var(--color-grey-900);
 
     background-color: var(--color-main-100);
-    border: 1px solid var(--color-main-1000);
+    border: 1px solid var(--color-main-800);
     box-shadow: var(--color-main-700) 4px 4px 0 0,
-      var(--color-main-4000) 4px 4px 0 1px;
+      var(--color-main-800) 4px 4px 0 1px;
 
     overflow: visible;
   }
