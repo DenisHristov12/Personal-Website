@@ -1,30 +1,20 @@
 import styled from 'styled-components';
+import { respondToSmallLaptop } from '../styles/mediaQueries';
 
 export const StyledHomePage = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4.8rem;
-  /* background-color: blue; */
+  margin-top: 4.2rem;
   padding: 2.4rem 2.4rem;
-  max-width: 65%;
-  height: 54rem;
+  max-width: 80%;
+  height: 70vh;
   display: flex;
   flex-direction: column;
 
   align-items: center;
   justify-content: space-around;
 
-  border: 5px solid var(--color-main-800);
+  border-left: 5px solid var(--color-main-800);
 
-  /* 1376px */
-  @media (max-width: 86em) {
-    max-width: 70%;
-    padding: 1.2rem 1.2rem;
-  }
-
-  /* 1216px */
-  @media (max-width: 70em) {
-    max-width: 75%;
-    padding: 0.8rem 0.8rem;
-  }
+  ${respondToSmallLaptop(`
+  margin-top: 3.2rem;
+  `)}
 `;

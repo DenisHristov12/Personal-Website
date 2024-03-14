@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { respondToSmallLaptop } from '../styles/mediaQueries';
 
 export const StyledBtn = styled.button`
   margin-top: 2.4rem;
@@ -30,4 +31,8 @@ export const StyledBtn = styled.button`
     color: var(--color-grey-300);
     background-color: var(--color-grey-400);
   }
+
+  ${respondToSmallLaptop(`
+  font-size: 1.4rem;
+  `)}
 `;

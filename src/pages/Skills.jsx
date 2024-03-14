@@ -2,12 +2,17 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { StyledSection } from '../ui/StyledSkillsSection';
 import { StyledSkill } from '../ui/StyledSkillBox';
+import { respondToSmallLaptop } from '../styles/mediaQueries';
 
 const StyledSpan = styled.span`
   font-size: 2rem;
   letter-spacing: 1.2px;
 
   color: var(--color-main-100);
+
+  ${respondToSmallLaptop(`
+  font-size: 1.6rem;
+  `)}
 `;
 
 const skills = [

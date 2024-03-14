@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { SlMouse, SlArrowDown, SlArrowUp } from 'react-icons/sl';

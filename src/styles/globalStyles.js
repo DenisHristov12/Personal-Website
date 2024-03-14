@@ -63,11 +63,12 @@ html {
 }
 
 body {
- font-family: 'Rubik', sans-serif;
+  font-family: 'Rubik', sans-serif;
 
   line-height: 1.5;
 
-overflow: hidden;
+  overflow: hidden;
+
 }
 
 button {

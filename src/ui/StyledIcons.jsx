@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { StyledSocials } from './StyledSocials';
+import { respondToSmallLaptop } from '../styles/mediaQueries';
 
 export const StyledIcons = styled(StyledSocials)`
   gap: 0.8rem;
@@ -14,4 +15,9 @@ export const StyledIcons = styled(StyledSocials)`
   top: 50%;
   left: 40%;
   transform: translate(0%, -50%);
+
+  ${respondToSmallLaptop(`
+  left: 39%;
+  gap: 0.4rem;
+  `)}
 `;

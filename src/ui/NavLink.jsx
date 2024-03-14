@@ -1,9 +1,15 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import {
+  respondToLandscapeTablets,
+  respondToSmallLaptop,
+} from '../styles/mediaQueries';
 
 export const StyledNavLink = styled(NavLink)`
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
   text-decoration: none;
 
   width: 13rem;
@@ -15,10 +21,6 @@ export const StyledNavLink = styled(NavLink)`
 
   &:link,
   &:visited {
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
-
     color: var(--color-main-100);
 
     border-bottom: 1px solid var(--color-main-700);
@@ -41,22 +43,60 @@ export const StyledNavLink = styled(NavLink)`
 
     overflow: visible;
   }
+
+  ${respondToSmallLaptop(`
+  width: 11rem;
+  font-size: 1.4rem;
+  `)}
+
+  ${respondToLandscapeTablets(`
+  width: 100%;
+
+padding: 1.2rem 0;
+
+font-size: 2rem;
+font-weight: 500;
+
+z-index: 999;
+
+& svg {
+  display: none;
+}
+
+&:link,
+&:visited {
+  color: var(--color-grey-900);
+
+  border-bottom: 0px solid var(--color-main-700);
+
+  border-right: 0px solid var(--color-main-700);
+}
+
+&:hover,
+&:active,
+&.active:link,
+&.active:visited {
+
+  opacity: 0.7;
+  background-color: var(--color-grey-200);
+  border: 0px solid var(--color-main-800);
+  box-shadow: var(--color-grey-700) 0px 0px 0 0,
+    var(--color-grey-800) 0px 0px 0 0px;
+
+  overflow: visible;
+}
+  `)}
 `;
 
 export const MainButton = styled(StyledNavLink)`
   display: flex;
   align-items: center;
   width: 24rem;
+  font-size: 1.8rem;
 
   padding: 1.2rem 2.4rem;
 
-  font-size: 2rem;
   font-weight: 600;
-
-  @media (max-width: 64em) {
-    font-size: 1.8rem;
-    padding: 0.8rem 1.6rem;
-  }
 
   &:link,
   &:visited {
@@ -77,4 +117,9 @@ export const MainButton = styled(StyledNavLink)`
     box-shadow: none;
     overflow: visible;
   }
+
+  ${respondToSmallLaptop(`
+  width: 20rem;
+  font-size: 1.6rem;
+  `)}
 `;

@@ -1,19 +1,15 @@
 import styled from 'styled-components';
+import { respondToSmallLaptop } from '../styles/mediaQueries';
 
 export const StyledH1 = styled.h1`
-  font-size: 5.2rem;
+  font-size: 4.8rem;
   display: inline-block;
   font-weight: 700;
   text-align: center;
 
   color: var(--color-main-100);
 
-  /* 1376px */
-  @media (max-width: 78em) {
-    font-size: 4.8rem;
-  }
-
-  @media (max-width: 64em) {
-    font-size: 4.2rem;
-  }
+  ${respondToSmallLaptop(`
+  font-size: 3.6rem;
+  `)}
 `;

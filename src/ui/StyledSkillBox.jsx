@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { respondToSmallLaptop } from '../styles/mediaQueries';
 
 export const StyledSkill = styled(motion.div)`
   max-width: 80%;
@@ -13,5 +14,10 @@ export const StyledSkill = styled(motion.div)`
     ${(props) => props.colorFrom},
     ${(props) => props.colorTo}
   );
+
   border-image-slice: 1;
+
+  ${respondToSmallLaptop(`
+  padding: 0.8rem 1.2rem;
+  `)}
 `;

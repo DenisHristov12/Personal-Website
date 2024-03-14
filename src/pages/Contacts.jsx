@@ -14,12 +14,17 @@ import { StyledTextarea } from '../ui/TextArea';
 import { StyledLabel } from '../ui/Label';
 import { StyledForm } from '../ui/Form';
 import { StyledContacts } from '../ui/ContactsContainer';
+import { respondToSmallLaptop } from '../styles/mediaQueries';
 
 const StyledSection = styled.section`
   display: flex;
   align-items: center;
 
   gap: 0.8rem;
+
+  ${respondToSmallLaptop(`
+  gap: 1.2rem;
+  `)}
 `;
 
 const StyledInputBox = styled.div`
