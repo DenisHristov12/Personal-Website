@@ -9,13 +9,9 @@ export const respondToLandscapeTablets = (content) => `
     ${content}
   }
 `;
-export const respondToTablets = (content) => `
-  @media (max-width: 64em) {
-    ${content}
-  }
-`;
+
 export const respondToMobile = (content) => `
-  @media (max-width: 64em) {
+  @media (max-width: 27em) {
     ${content}
   }
 `;

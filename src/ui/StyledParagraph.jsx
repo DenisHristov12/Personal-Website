@@ -12,6 +12,9 @@ export const StyledP = styled.p`
   display: inline-block;
 
   ${respondToSmallLaptop(`
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  `)}
+  ${respondToSmallLaptop(`
+  font-size: 2rem;
   `)}
 `;

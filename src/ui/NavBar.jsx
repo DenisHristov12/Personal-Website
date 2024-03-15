@@ -29,7 +29,7 @@ const StyledNav = styled.nav`
   }
 `;
 
-const StyledBigNav = styled(motion.div)`
+const StyledBigNav = styled.div`
   padding-top: 1.2rem;
 
   display: flex;
@@ -52,6 +52,8 @@ const StyledMobileNav = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: start
+    ;
   `)};
 `;
 
@@ -62,6 +64,11 @@ const StyledDiv = styled.div`
 
 const StyledDivSecond = styled.div`
   transform: translateX(6.3rem);
+
+  ${respondToLandscapeTablets(`
+    transform: translateX(5.4rem);
+
+  `)}
 `;
 
 const StyledSpan = styled.span`
@@ -73,6 +80,10 @@ const StyledSpan = styled.span`
 
   ${respondToSmallLaptop(`
   font-size: 2rem;
+  `)}
+
+  ${respondToSmallLaptop(`
+  font-size: 2.4rem;
   `)}
 `;
 
@@ -132,6 +143,11 @@ const StyledMobileNavButton = styled.button`
 
   ${respondToLandscapeTablets(`
   display: block;
+
+  & svg {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
   `)}
 `;
 
@@ -144,10 +160,7 @@ function NavBar() {
 
   return (
     <StyledNav show={showMenu}>
-      <StyledBigNav
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, delay: 0 }}>
+      <StyledBigNav>
         <StyledDiv>
           <div>
             <StyledSpanFirstLast>D</StyledSpanFirstLast>

@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { respondToSmallLaptop } from '../styles/mediaQueries';
+import {
+  respondToLandscapeTablets,
+  respondToSmallLaptop,
+} from '../styles/mediaQueries';
 
 export const StyledLabel = styled.label`
   font-size: 1.6rem;
@@ -8,5 +11,9 @@ export const StyledLabel = styled.label`
 
   ${respondToSmallLaptop(`
   font-size: 1.4rem;
+  `)}
+
+  ${respondToLandscapeTablets(`
+  font-size: 2rem;
   `)}
 `;

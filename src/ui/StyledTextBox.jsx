@@ -1,5 +1,8 @@
 import styled, { keyframes } from 'styled-components';
-import { respondToSmallLaptop } from '../styles/mediaQueries';
+import {
+  respondToLandscapeTablets,
+  respondToSmallLaptop,
+} from '../styles/mediaQueries';
 
 const fadeIn = keyframes`
 0%{
@@ -29,7 +32,7 @@ export const StyledTextBox = styled.div`
   margin-right: 7%;
   height: 80vh;
 
-  margin-bottom: 4.8rem;
+  margin-bottom: 7.5rem;
 
   border-left: 5px solid var(--color-main-700);
 
@@ -53,8 +56,12 @@ export const StyledTextBox = styled.div`
   }
 
   ${respondToSmallLaptop(`
+  padding: 2.4rem 3.6rem;
+  `)}
+
+  ${respondToLandscapeTablets(`
   margin: 4.8rem, auto, 0, auto;
   max-width: 80%;
-
+  height: 85vh
   `)}
 `;

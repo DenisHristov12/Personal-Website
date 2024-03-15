@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { respondToSmallLaptop } from '../styles/mediaQueries';
+import {
+  respondToLandscapeTablets,
+  respondToSmallLaptop,
+} from '../styles/mediaQueries';
 
 export const StyledInput = styled.input`
   border: 0;
@@ -23,5 +26,9 @@ export const StyledInput = styled.input`
 
   ${respondToSmallLaptop(`
   font-size: 1.4rem;
+  `)}
+
+  ${respondToLandscapeTablets(`
+  font-size: 2rem;
   `)}
 `;

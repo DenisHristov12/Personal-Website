@@ -4,13 +4,31 @@ import { motion } from 'framer-motion';
 import { SlMouse, SlArrowDown, SlArrowUp } from 'react-icons/sl';
 
 import { useEffect, useState } from 'react';
-import { StyledIcons } from '../ui/StyledIcons';
+
 import { StyledTextBox } from '../ui/StyledTextBox';
 import { StyledH2 } from '../ui/StyledHeadingSecondary';
 import { StyledP } from '../ui/StyledParagraph';
 import { respondToSmallLaptop } from '../styles/mediaQueries';
 
 const StyledSection = styled.section``;
+const StyledSpan = styled.span`
+  align-self: center;
+
+  & svg {
+    color: var(--color-main-700);
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  ${respondToSmallLaptop(`
+    
+    & svg {
+    
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+  `)}
+`;
 
 const info = [
   {
@@ -52,21 +70,31 @@ function Aboutme() {
   return (
     iconsLoaded && (
       <>
-        <StyledIcons>
-          <SlArrowUp />
-          <SlMouse />
-          <SlArrowDown />
-        </StyledIcons>
         <motion.div
           initial={{ opacity: 0, x: '-100%' }}
           animate={{ opacity: 1, x: '0%' }}
           exit={{ opacity: 0, x: '100%' }}
           transition={{ duration: 0.5 }}>
           <StyledSection>
-            {info.map((el) => (
+            {/* <StyledIcons>
+              <SlArrowUp />
+              <SlMouse />
+              <SlArrowDown />
+            </StyledIcons> */}
+            {info.map((el, i) => (
               <StyledTextBox key={el.heading}>
+                {i > 0 && (
+                  <StyledSpan>
+                    <SlArrowUp />
+                  </StyledSpan>
+                )}
                 <StyledH2>{el.heading}</StyledH2>
                 <StyledP>{el.content}</StyledP>
+                {i < 3 && (
+                  <StyledSpan>
+                    <SlArrowDown />
+                  </StyledSpan>
+                )}
               </StyledTextBox>
             ))}
           </StyledSection>

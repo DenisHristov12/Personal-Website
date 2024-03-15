@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { respondToSmallLaptop } from '../styles/mediaQueries';
+import {
+  respondToLandscapeTablets,
+  respondToSmallLaptop,
+} from '../styles/mediaQueries';
 
 export const StyledHomePage = styled.div`
   /* background-color: blue; */
@@ -18,8 +21,13 @@ export const StyledHomePage = styled.div`
   border-left: 5px solid var(--color-main-800);
 
   ${respondToSmallLaptop(`
+  
+   margin-top: 2.4rem;
+  `)}
+
+  ${respondToLandscapeTablets(`
+  height: 80vh;
   margin: 4.8rem, auto, 0, auto;
   max-width: 80%;
-  // margin-top: 3.2rem;
   `)}
 `;

@@ -2,7 +2,10 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { StyledSection } from '../ui/StyledSkillsSection';
 import { StyledSkill } from '../ui/StyledSkillBox';
-import { respondToSmallLaptop } from '../styles/mediaQueries';
+import {
+  respondToLandscapeTablets,
+  respondToSmallLaptop,
+} from '../styles/mediaQueries';
 
 const StyledSpan = styled.span`
   font-size: 2rem;
@@ -12,6 +15,10 @@ const StyledSpan = styled.span`
 
   ${respondToSmallLaptop(`
   font-size: 1.6rem;
+  `)}
+
+  ${respondToLandscapeTablets(`
+  font-size: 2.4rem;
   `)}
 `;
 

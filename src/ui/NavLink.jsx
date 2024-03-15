@@ -119,7 +119,12 @@ export const MainButton = styled(StyledNavLink)`
   }
 
   ${respondToSmallLaptop(`
-  width: 20rem;
-  font-size: 1.6rem;
+  width: 18rem;
+  font-size: 1.4rem;
+  `)}
+
+  ${respondToLandscapeTablets(`
+  width: 35rem;
+  font-size: 3rem;
   `)}
 `;

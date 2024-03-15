@@ -8,6 +8,9 @@ export const StyledH2 = styled.h2`
   margin-bottom: 1.2rem;
 
   ${respondToSmallLaptop(`
-  font-size: 2.4rem;
+  font-size: 2rem;
+  `)}
+  ${respondToSmallLaptop(`
+  font-size: 3rem;
   `)}
 `;

@@ -14,7 +14,10 @@ import { StyledTextarea } from '../ui/TextArea';
 import { StyledLabel } from '../ui/Label';
 import { StyledForm } from '../ui/Form';
 import { StyledContacts } from '../ui/ContactsContainer';
-import { respondToSmallLaptop } from '../styles/mediaQueries';
+import {
+  respondToLandscapeTablets,
+  respondToSmallLaptop,
+} from '../styles/mediaQueries';
 
 const StyledSection = styled.section`
   display: flex;
@@ -26,11 +29,9 @@ const StyledSection = styled.section`
   margin-left: auto;
   margin-right: 9%;
 
-  /* margin-top: 10%; */
-  gap: 0.8rem;
+  gap: 2.4rem;
 
-  ${respondToSmallLaptop(`
-  gap: 1.2rem;
+  ${respondToLandscapeTablets(`
   max-width: 80%;
   margin-right: 7%;
   `)}
@@ -39,6 +40,8 @@ const StyledSection = styled.section`
 const StyledInputBox = styled.div`
   display: flex;
   flex-direction: column;
+
+  gap: 1.2rem;
 `;
 
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;

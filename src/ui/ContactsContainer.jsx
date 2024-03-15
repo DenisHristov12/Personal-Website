@@ -5,6 +5,9 @@ export const StyledContacts = styled.div`
   /* max-width: 90%; */
   height: 100%;
 
+  display: flex;
+  align-items: center;
+
   /* background-color: blue; */
 
   padding: 5.2rem;

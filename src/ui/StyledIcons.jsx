@@ -5,13 +5,16 @@ import { respondToSmallLaptop } from '../styles/mediaQueries';
 export const StyledIcons = styled(StyledSocials)`
   gap: 0.8rem;
 
+  z-index: 999;
+
   & svg {
     color: var(--color-main-700);
     width: 2.4rem;
     height: 2.4rem;
   }
 
-  position: absolute;
+  overflow: hidden;
+  position: fixed;
   top: 50%;
   left: 40%;
   transform: translate(0%, -50%);

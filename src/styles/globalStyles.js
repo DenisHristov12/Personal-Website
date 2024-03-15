@@ -62,6 +62,18 @@ html {
   font-size: 62.5%;
 }
 
+@media (max-width: 48em) {
+  html{
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 27em) {
+  html{
+    font-size: 50%;
+  }
+}
+
 body {
   font-family: 'Rubik', sans-serif;
 
