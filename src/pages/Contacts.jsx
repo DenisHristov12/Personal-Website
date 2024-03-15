@@ -20,10 +20,19 @@ const StyledSection = styled.section`
   display: flex;
   align-items: center;
 
+  max-width: 50%;
+  height: 80vh;
+
+  margin-left: auto;
+  margin-right: 9%;
+
+  /* margin-top: 10%; */
   gap: 0.8rem;
 
   ${respondToSmallLaptop(`
   gap: 1.2rem;
+  max-width: 80%;
+  margin-right: 7%;
   `)}
 `;
 

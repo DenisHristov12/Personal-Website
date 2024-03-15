@@ -65,7 +65,7 @@ z-index: 999;
 
 &:link,
 &:visited {
-  color: var(--color-grey-900);
+  color: var(--color-main-100);
 
   border-bottom: 0px solid var(--color-main-700);
 
@@ -78,7 +78,7 @@ z-index: 999;
 &.active:visited {
 
   opacity: 0.7;
-  background-color: var(--color-grey-200);
+  background-color: var(--color-main-700);
   border: 0px solid var(--color-main-800);
   box-shadow: var(--color-grey-700) 0px 0px 0 0,
     var(--color-grey-800) 0px 0px 0 0px;

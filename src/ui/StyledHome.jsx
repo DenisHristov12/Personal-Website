@@ -2,9 +2,12 @@ import styled from 'styled-components';
 import { respondToSmallLaptop } from '../styles/mediaQueries';
 
 export const StyledHomePage = styled.div`
-  margin-top: 4.2rem;
-  padding: 2.4rem 2.4rem;
-  max-width: 80%;
+  /* background-color: blue; */
+  margin-left: auto;
+  margin-right: 7%;
+  margin-top: 4.8rem;
+  padding: 2.4rem;
+  max-width: 50%;
   height: 70vh;
   display: flex;
   flex-direction: column;
@@ -15,6 +18,8 @@ export const StyledHomePage = styled.div`
   border-left: 5px solid var(--color-main-800);
 
   ${respondToSmallLaptop(`
-  margin-top: 3.2rem;
+  margin: 4.8rem, auto, 0, auto;
+  max-width: 80%;
+  // margin-top: 3.2rem;
   `)}
 `;

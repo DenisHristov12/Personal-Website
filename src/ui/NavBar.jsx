@@ -10,24 +10,54 @@ import {
   MdMenu,
   MdClose,
 } from 'react-icons/md';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   respondToLandscapeTablets,
   respondToSmallLaptop,
 } from '../styles/mediaQueries';
+import { motion } from 'framer-motion';
 
 const StyledNav = styled.nav`
   max-width: 100%;
-  height: 10%;
-  padding: 0 2.4rem;
+
+  height: ${(props) => (props.show ? '100vh' : '7rem')};
+  padding: 0;
+
+  @media (min-width: 48.1em) {
+    height: 7rem;
+    padding: 0 2.4rem;
+  }
+`;
+
+const StyledBigNav = styled(motion.div)`
+  padding-top: 1.2rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
+const StyledMobileNav = styled(motion.div)`
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  height: 100vh;
+  background-color: transparent;
+
+  justify-content: space-between;
+
+  ${respondToLandscapeTablets(`
+     opacity: 1;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  `)};
+`;
+
 const StyledDiv = styled.div`
   line-height: 1;
+  ${respondToLandscapeTablets(`padding: 0 2.4rem;`)}
 `;
 
 const StyledDivSecond = styled.div`
@@ -50,42 +80,38 @@ const StyledSpanFirstLast = styled(StyledSpan)`
   color: var(--color-main-700);
 `;
 
+const StyledUlMobile = styled.ul`
+  margin-top: 8rem;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+
+  gap: 4.8rem;
+
+  & li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+`;
+
 const StyledUl = styled.ul`
   display: flex;
-  height: 100%;
   align-items: center;
   gap: 4.8rem;
 
   ${respondToSmallLaptop(`
   gap: 3.2rem;
-  `)}
 
   ${respondToLandscapeTablets(`
-  // display: none;
-
-  // display: flex;
-  
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-
-  height: 60vh;
-  width: 100%;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.7);
-
-  transition: all 0.5s;
-
-  & li {
-    display: flex;
-    justify-content: center;
-    width: 100%
     
-  }
-    `)}
+  display: none;
+  `)}
+  `)}
 `;
 
 const StyledMobileNavButton = styled.button`
@@ -106,63 +132,41 @@ const StyledMobileNavButton = styled.button`
 
   ${respondToLandscapeTablets(`
   display: block;
-  z-index: 9999;
   `)}
 `;
 
 function NavBar() {
-  const [showMenu, setShowMenu] = useState(true);
-  const [isOpened, setIsOpened] = useState(false);
-  const [windowSize, setWindowSize] = useState(0);
+  const [showMenu, setShowMenu] = useState(false);
 
   function handleOpenCloseMenu() {
     setShowMenu((menu) => !menu);
-    setIsOpened((opened) => !opened);
   }
 
-  useEffect(
-    function () {
-      function Size() {
-        setWindowSize(window.innerWidth);
-      }
-
-      Size();
-
-      if (windowSize > 768) {
-        setShowMenu(false);
-        setIsOpened(true);
-      } else {
-        setShowMenu(true);
-        setIsOpened(false);
-      }
-    },
-    [windowSize]
-  );
-
-  // console.log(showMenu);
-
   return (
-    <StyledNav>
-      <StyledDiv>
-        <div>
-          <StyledSpanFirstLast>D</StyledSpanFirstLast>
-          <StyledSpan>e</StyledSpan>
-          <StyledSpan>n</StyledSpan>
-          <StyledSpan>i</StyledSpan>
-          <StyledSpanFirstLast>S</StyledSpanFirstLast>
-        </div>
-        <StyledDivSecond>
-          <StyledSpanFirstLast>H</StyledSpanFirstLast>
-          <StyledSpan>r</StyledSpan>
-          <StyledSpan>i</StyledSpan>
-          <StyledSpan>s</StyledSpan>
-          <StyledSpan>t</StyledSpan>
-          <StyledSpan>o</StyledSpan>
-          <StyledSpanFirstLast>V</StyledSpanFirstLast>
-        </StyledDivSecond>
-      </StyledDiv>
+    <StyledNav show={showMenu}>
+      <StyledBigNav
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, delay: 0 }}>
+        <StyledDiv>
+          <div>
+            <StyledSpanFirstLast>D</StyledSpanFirstLast>
+            <StyledSpan>e</StyledSpan>
+            <StyledSpan>n</StyledSpan>
+            <StyledSpan>i</StyledSpan>
+            <StyledSpanFirstLast>S</StyledSpanFirstLast>
+          </div>
+          <StyledDivSecond>
+            <StyledSpanFirstLast>H</StyledSpanFirstLast>
+            <StyledSpan>r</StyledSpan>
+            <StyledSpan>i</StyledSpan>
+            <StyledSpan>s</StyledSpan>
+            <StyledSpan>t</StyledSpan>
+            <StyledSpan>o</StyledSpan>
+            <StyledSpanFirstLast>V</StyledSpanFirstLast>
+          </StyledDivSecond>
+        </StyledDiv>
 
-      {isOpened && (
         <StyledUl>
           <li>
             <StyledNavLink to='/home'>
@@ -185,20 +189,44 @@ function NavBar() {
             </StyledNavLink>
           </li>
         </StyledUl>
+        <StyledMobileNavButton>
+          {!showMenu ? (
+            <MdMenu onClick={handleOpenCloseMenu} />
+          ) : (
+            <MdClose onClick={handleOpenCloseMenu} />
+          )}
+        </StyledMobileNavButton>
+      </StyledBigNav>
+
+      {showMenu && (
+        <StyledMobileNav
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 0 }}>
+          <StyledUlMobile>
+            <li>
+              <StyledNavLink to='/home'>
+                <MdHome /> Home
+              </StyledNavLink>
+            </li>
+            <li>
+              <StyledNavLink to='/about'>
+                <MdInfoOutline /> About
+              </StyledNavLink>
+            </li>
+            <li>
+              <StyledNavLink to='/skills'>
+                <MdAutoFixHigh /> Skills
+              </StyledNavLink>
+            </li>
+            <li>
+              <StyledNavLink to='/contacts'>
+                <MdContactMail /> Contacts
+              </StyledNavLink>
+            </li>
+          </StyledUlMobile>
+        </StyledMobileNav>
       )}
-      <StyledMobileNavButton>
-        {showMenu ? (
-          <MdMenu
-            className={showMenu ? 'open' : ''}
-            onClick={handleOpenCloseMenu}
-          />
-        ) : (
-          <MdClose
-            className={showMenu ? 'close' : ''}
-            onClick={handleOpenCloseMenu}
-          />
-        )}
-      </StyledMobileNavButton>
     </StyledNav>
   );
 }

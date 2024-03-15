@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { respondToSmallLaptop } from '../styles/mediaQueries';
 
 const fadeIn = keyframes`
 0%{
@@ -21,9 +22,16 @@ const fadeIn = keyframes`
 `;
 
 export const StyledTextBox = styled.div`
+  /* background-color: blue; */
+
+  max-width: 53.3%;
+  margin-left: auto;
+  margin-right: 7%;
   height: 80vh;
 
-  margin: 0% 10%;
+  margin-bottom: 4.8rem;
+
+  border-left: 5px solid var(--color-main-700);
 
   padding: 3.6rem 4.8rem;
 
@@ -43,4 +51,10 @@ export const StyledTextBox = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+
+  ${respondToSmallLaptop(`
+  margin: 4.8rem, auto, 0, auto;
+  max-width: 80%;
+
+  `)}
 `;

@@ -2,12 +2,11 @@ import styled from 'styled-components';
 import { respondToSmallLaptop } from '../styles/mediaQueries';
 
 export const Main = styled.main`
-  height: 80vh;
-  max-width: 50%;
-  margin-left: auto;
-  /* margin-top: 4%; */
-  margin-top: 6.4rem;
-  margin-right: 7%;
+  height: 90vh;
+  max-width: 100%;
+  margin-top: 4.8rem;
+  margin-bottom: 4.8rem;
+
   /* background-color: red; */
   overflow: scroll;
 

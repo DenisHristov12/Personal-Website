@@ -8,10 +8,9 @@ import { StyledIcons } from '../ui/StyledIcons';
 import { StyledTextBox } from '../ui/StyledTextBox';
 import { StyledH2 } from '../ui/StyledHeadingSecondary';
 import { StyledP } from '../ui/StyledParagraph';
+import { respondToSmallLaptop } from '../styles/mediaQueries';
 
-const StyledSection = styled.section`
-  border-left: 5px solid var(--color-main-700);
-`;
+const StyledSection = styled.section``;
 
 const info = [
   {
