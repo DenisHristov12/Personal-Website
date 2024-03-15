@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import {
+  respondToBiggerTablets,
   respondToLandscapeTablets,
+  respondToMobile,
   respondToSmallLaptop,
 } from '../styles/mediaQueries';
 
@@ -15,8 +17,18 @@ export const StyledForm = styled.form`
   gap: 2.4rem
   `)}
 
+  ${respondToBiggerTablets(`
+  margin: 3.6rem;
+  gap: 6.4rem; 
+  `)}
+
   ${respondToLandscapeTablets(`
   margin: 3.6rem;
+  gap: 6.4rem; 
+  `)}
+
+${respondToMobile(`
+  margin: 0 3.6rem 0 4.8rem;
   gap: 6.4rem; 
   `)}
 `;

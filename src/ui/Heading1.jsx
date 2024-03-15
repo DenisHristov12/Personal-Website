@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import {
+  respondToBiggerTablets,
   respondToLandscapeTablets,
+  respondToMobile,
   respondToSmallLaptop,
 } from '../styles/mediaQueries';
 
 export const StyledH1 = styled.h1`
-  /* background-color: red; */
   width: 55%;
   font-size: 4.8rem;
   display: inline-block;
@@ -19,8 +20,16 @@ export const StyledH1 = styled.h1`
   font-size: 3.6rem;
   `)}
 
+  ${respondToBiggerTablets(`
+  font-size: 6.4rem;
+  `)}
+
   ${respondToLandscapeTablets(`
   font-size: 6.4rem;
   width: 80%;
+  `)}
+
+${respondToMobile(`
+  font-size: 5.2rem;
   `)}
 `;

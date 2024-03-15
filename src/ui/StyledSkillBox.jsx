@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import {
+  respondToBiggerTablets,
   respondToLandscapeTablets,
+  respondToMobile,
   respondToSmallLaptop,
 } from '../styles/mediaQueries';
 
@@ -24,7 +26,17 @@ export const StyledSkill = styled(motion.div)`
   padding: 0.8rem 1.2rem;
   `)}
 
+  ${respondToBiggerTablets(`
+  padding: 2.4rem;
+  `)}
+
   ${respondToLandscapeTablets(`
   padding: 2.4rem;
+  `)}
+
+  ${respondToMobile(`
+  max-width: 100%;
+
+  padding: 1.2rem;
   `)}
 `;

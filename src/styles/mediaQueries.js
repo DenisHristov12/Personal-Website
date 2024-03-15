@@ -15,3 +15,9 @@ export const respondToMobile = (content) => `
     ${content}
   }
 `;
+
+export const respondToBiggerTablets = (content) => `
+  @media (min-height: 64em) {
+    ${content}
+  }
+`;

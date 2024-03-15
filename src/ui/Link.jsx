@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { respondToMobile } from '../styles/mediaQueries';
 
 export const StyledLink = styled(Link)`
   display: flex;
@@ -21,4 +22,11 @@ export const StyledLink = styled(Link)`
 
     transition: all 0.5s;
   }
+
+  ${respondToMobile(`
+  & svg {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+  `)}
 `;

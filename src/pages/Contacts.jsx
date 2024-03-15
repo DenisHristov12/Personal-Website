@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import styled from 'styled-components';
 import toast from 'react-hot-toast';
 
 import { ImGithub, ImLinkedin, ImFilePdf } from 'react-icons/im';
@@ -14,35 +13,8 @@ import { StyledTextarea } from '../ui/TextArea';
 import { StyledLabel } from '../ui/Label';
 import { StyledForm } from '../ui/Form';
 import { StyledContacts } from '../ui/ContactsContainer';
-import {
-  respondToLandscapeTablets,
-  respondToSmallLaptop,
-} from '../styles/mediaQueries';
-
-const StyledSection = styled.section`
-  display: flex;
-  align-items: center;
-
-  max-width: 50%;
-  height: 80vh;
-
-  margin-left: auto;
-  margin-right: 9%;
-
-  gap: 2.4rem;
-
-  ${respondToLandscapeTablets(`
-  max-width: 80%;
-  margin-right: 7%;
-  `)}
-`;
-
-const StyledInputBox = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  gap: 1.2rem;
-`;
+import { StyledSection } from '../ui/ContactsSection';
+import { StyledInputBox } from '../ui/InputBox';
 
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 

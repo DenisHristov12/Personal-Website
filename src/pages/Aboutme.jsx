@@ -1,34 +1,12 @@
-import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { SlMouse, SlArrowDown, SlArrowUp } from 'react-icons/sl';
-
-import { useEffect, useState } from 'react';
+import { SlArrowDown, SlArrowUp } from 'react-icons/sl';
 
 import { StyledTextBox } from '../ui/StyledTextBox';
 import { StyledH2 } from '../ui/StyledHeadingSecondary';
 import { StyledP } from '../ui/StyledParagraph';
-import { respondToSmallLaptop } from '../styles/mediaQueries';
-
-const StyledSection = styled.section``;
-const StyledSpan = styled.span`
-  align-self: center;
-
-  & svg {
-    color: var(--color-main-700);
-    width: 4.8rem;
-    height: 4.8rem;
-  }
-
-  ${respondToSmallLaptop(`
-    
-    & svg {
-    
-    width: 3.6rem;
-    height: 3.6rem;
-  }
-  `)}
-`;
+import { StyledSpan } from '../ui/StyledIcon';
 
 const info = [
   {
@@ -75,12 +53,7 @@ function Aboutme() {
           animate={{ opacity: 1, x: '0%' }}
           exit={{ opacity: 0, x: '100%' }}
           transition={{ duration: 0.5 }}>
-          <StyledSection>
-            {/* <StyledIcons>
-              <SlArrowUp />
-              <SlMouse />
-              <SlArrowDown />
-            </StyledIcons> */}
+          <section>
             {info.map((el, i) => (
               <StyledTextBox key={el.heading}>
                 {i > 0 && (
@@ -97,7 +70,7 @@ function Aboutme() {
                 )}
               </StyledTextBox>
             ))}
-          </StyledSection>
+          </section>
         </motion.div>
       </>
     )

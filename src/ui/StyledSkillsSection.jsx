@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import {
+  respondToBiggerTablets,
   respondToLandscapeTablets,
+  respondToMobile,
   respondToSmallLaptop,
 } from '../styles/mediaQueries';
 
@@ -24,10 +26,23 @@ export const StyledSection = styled.section`
   margin-top: 1%;
   `)}
 
+  ${respondToBiggerTablets(`
+  margin-top: 5%;
+  gap: 4.8rem;
+  height: 80vh;
+  max-width: 80%;
+  `)}
+
   ${respondToLandscapeTablets(`
   gap: 4.8rem;
   height: 80vh;
-
   max-width: 80%;
+  `)}
+
+${respondToMobile(`
+  margin-top: 3%;
+
+  border-left: 0px solid var(--color-main-800);
+  margin: 0 auto 0 1.6rem;
   `)}
 `;

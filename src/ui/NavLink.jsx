@@ -1,7 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import {
+  respondToBiggerTablets,
   respondToLandscapeTablets,
+  respondToMobile,
   respondToSmallLaptop,
 } from '../styles/mediaQueries';
 
@@ -123,8 +125,18 @@ export const MainButton = styled(StyledNavLink)`
   font-size: 1.4rem;
   `)}
 
+  ${respondToBiggerTablets(`
+  width: 35rem;
+  font-size: 3rem;
+  `)}
+
   ${respondToLandscapeTablets(`
   width: 35rem;
   font-size: 3rem;
+  `)}
+
+  ${respondToMobile(`
+  width: 24rem;
+  font-size: 2rem;
   `)}
 `;
