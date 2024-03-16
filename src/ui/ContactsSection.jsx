@@ -33,5 +33,6 @@ export const StyledSection = styled.section`
         max-width: 100%;
         flex-direction: column;
         margin-left: 3rem;
+        height: 70vh;
     `)}
 `;

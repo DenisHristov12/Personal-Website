@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { respondToSmallLaptop } from '../styles/mediaQueries';
+import {
+  respondToLandscapeTablets,
+  respondToMobile,
+  respondToSmallLaptop,
+} from '../styles/mediaQueries';
 
 export const StyledP = styled.p`
   color: var(--color-main-100);
@@ -14,7 +18,10 @@ export const StyledP = styled.p`
   ${respondToSmallLaptop(`
   font-size: 1.4rem;
   `)}
-  ${respondToSmallLaptop(`
+  ${respondToLandscapeTablets(`
   font-size: 2rem;
+  `)}
+  ${respondToMobile(`
+  font-size: 1.6rem;
   `)}
 `;

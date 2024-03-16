@@ -136,7 +136,7 @@ export const MainButton = styled(StyledNavLink)`
   `)}
 
   ${respondToMobile(`
-  width: 24rem;
-  font-size: 2rem;
+  width: 20rem;
+  font-size: 1.8rem;
   `)}
 `;

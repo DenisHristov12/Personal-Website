@@ -30,6 +30,6 @@ export const StyledH1 = styled.h1`
   `)}
 
 ${respondToMobile(`
-  font-size: 5.2rem;
+  font-size: 4rem;
   `)}
 `;

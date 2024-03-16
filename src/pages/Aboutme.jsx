@@ -20,7 +20,7 @@ const info = [
       'My passion is Front-End development. I really love making the functionality of the website work and also i enjoy designing websites that are created by me.',
   },
   {
-    heading: 'About my experience in the world of programming',
+    heading: 'My experience in programming',
 
     content:
       'About 2 years ago I started learning JavaScript. That is when i realised that JavaScript together with HTML and CSS are the languages I want to improve my skills at. Later on, after developing my JavaScript skills, I wanted to expand my skills, so what is when I started learning React. Really enjoyed learning about how React works and I am currently developing my skills at it.',

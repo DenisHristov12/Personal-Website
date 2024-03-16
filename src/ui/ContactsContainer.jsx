@@ -24,6 +24,7 @@ export const StyledContacts = styled.div`
   `)}
 
   ${respondToMobile(`
+  // background-color: red;
   border-left: 0px solid var(--color-main-700);
   margin: 0 3rem
   padding: 1.2rem 3.6rem;

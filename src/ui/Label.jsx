@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {
   respondToBiggerTablets,
   respondToLandscapeTablets,
+  respondToMobile,
   respondToSmallLaptop,
 } from '../styles/mediaQueries';
 
@@ -20,5 +21,9 @@ export const StyledLabel = styled.label`
 
   ${respondToLandscapeTablets(`
   font-size: 2rem;
+  `)}
+
+  ${respondToMobile(`
+  font-size: 1.8rem;
   `)}
 `;

@@ -29,6 +29,6 @@ export const StyledForm = styled.form`
 
 ${respondToMobile(`
   margin: 0 3.6rem 0 4.8rem;
-  gap: 6.4rem; 
+  gap: 2.4rem; 
   `)}
 `;

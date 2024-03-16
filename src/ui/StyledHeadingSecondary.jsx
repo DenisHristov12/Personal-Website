@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { respondToSmallLaptop } from '../styles/mediaQueries';
+import {
+  respondToLandscapeTablets,
+  respondToMobile,
+  respondToSmallLaptop,
+} from '../styles/mediaQueries';
 
 export const StyledH2 = styled.h2`
   color: var(--color-main-700);
@@ -10,7 +14,10 @@ export const StyledH2 = styled.h2`
   ${respondToSmallLaptop(`
   font-size: 2rem;
   `)}
-  ${respondToSmallLaptop(`
+  ${respondToLandscapeTablets(`
   font-size: 3rem;
+  `)}
+  ${respondToMobile(`
+  font-size: 2.4rem;
   `)}
 `;
