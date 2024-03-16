@@ -39,6 +39,7 @@ height: 80vh;
 
 ${respondToMobile(`
 margin-top: 20%;
+margin-right: 9%;
   height: 65vh;
   border-left: 0px solid var(--color-main-800);
  `)}

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {
   respondToBiggerTablets,
   respondToLandscapeTablets,
+  respondToMobile,
   respondToSmallLaptop,
 } from '../styles/mediaQueries';
 
@@ -21,5 +22,8 @@ font-size: 2.4rem;
 
 ${respondToLandscapeTablets(`
 font-size: 2.4rem;
+`)}
+${respondToMobile(`
+font-size: 1.8rem;
 `)}
 `;

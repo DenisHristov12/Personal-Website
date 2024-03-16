@@ -9,15 +9,12 @@ export const StyledMobileNav = styled(motion.div)`
   height: 100vh;
   background-color: transparent;
 
-  justify-content: space-between;
-
   ${respondToLandscapeTablets(`
-   opacity: 1;
+  opacity: 1;
   pointer-events: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start
-  ;
+  justify-content: start;
 `)};
 `;

@@ -6,6 +6,7 @@ export const StyledMobileNavButton = styled.button`
 
   text-decoration: none;
   background-color: transparent;
+
   border: none;
   cursor: pointer;
 

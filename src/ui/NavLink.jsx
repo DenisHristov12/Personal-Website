@@ -56,10 +56,9 @@ export const StyledNavLink = styled(NavLink)`
 
 padding: 1.2rem 0;
 
-font-size: 2rem;
+font-size: 2.4rem;
 font-weight: 500;
 
-z-index: 999;
 
 & svg {
   display: none;
@@ -85,7 +84,6 @@ z-index: 999;
   box-shadow: var(--color-grey-700) 0px 0px 0 0,
     var(--color-grey-800) 0px 0px 0 0px;
 
-  overflow: visible;
 }
   `)}
 `;

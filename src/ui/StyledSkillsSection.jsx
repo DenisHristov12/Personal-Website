@@ -40,6 +40,7 @@ export const StyledSection = styled.section`
   `)}
 
 ${respondToMobile(`
+  gap: 3.2rem;
   margin-top: 3%;
 
   border-left: 0px solid var(--color-main-800);
