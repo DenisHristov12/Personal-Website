@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { SlArrowDown, SlArrowUp } from 'react-icons/sl';
@@ -33,47 +32,31 @@ const info = [
 ];
 
 function Aboutme() {
-  const [iconsLoaded, setIconsLoaded] = useState(false);
-
-  useEffect(() => {
-    const loadIcons = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
-      setIconsLoaded(true);
-    };
-
-    loadIcons();
-  }, []);
-
   return (
-    iconsLoaded && (
-      <>
-        <motion.div
-          initial={{ opacity: 0, x: '-100%' }}
-          animate={{ opacity: 1, x: '0%' }}
-          exit={{ opacity: 0, x: '100%' }}
-          transition={{ duration: 0.5 }}>
-          <section>
-            {info.map((el, i) => (
-              <StyledTextBox key={el.heading}>
-                {i > 0 && (
-                  <StyledSpan>
-                    <SlArrowUp />
-                  </StyledSpan>
-                )}
-                <StyledH2>{el.heading}</StyledH2>
-                <StyledP>{el.content}</StyledP>
-                {i < 3 && (
-                  <StyledSpan>
-                    <SlArrowDown />
-                  </StyledSpan>
-                )}
-              </StyledTextBox>
-            ))}
-          </section>
-        </motion.div>
-      </>
-    )
+    <motion.div
+      initial={{ opacity: 0, x: '-100%' }}
+      animate={{ opacity: 1, x: '0%' }}
+      exit={{ opacity: 0, x: '100%' }}
+      transition={{ duration: 0.5 }}>
+      <section>
+        {info.map((el, i) => (
+          <StyledTextBox key={el.heading}>
+            {i > 0 && (
+              <StyledSpan>
+                <SlArrowUp />
+              </StyledSpan>
+            )}
+            <StyledH2>{el.heading}</StyledH2>
+            <StyledP>{el.content}</StyledP>
+            {i < 3 && (
+              <StyledSpan>
+                <SlArrowDown />
+              </StyledSpan>
+            )}
+          </StyledTextBox>
+        ))}
+      </section>
+    </motion.div>
   );
 }
 
