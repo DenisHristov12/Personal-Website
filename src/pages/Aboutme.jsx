@@ -26,9 +26,9 @@ const info = [
       'About 2 years ago I started learning JavaScript. That is when i realised that JavaScript together with HTML and CSS are the languages I want to improve my skills at. Later on, after developing my JavaScript skills, I wanted to expand my skills, so what is when I started learning React. Really enjoyed learning about how React works and I am currently developing my skills at it.',
   },
   {
-    heading: 'My scoial skills',
+    heading: 'My social skills',
     content:
-      'I am ambitious, opened to learning new technologies and also i am a fast learner! I like to work in a team because of the skills, advices and support that the other people can exchange with you!',
+      'I am ambitious, opened to learning new technologies and also I am a fast learner! I like to work in a team because of the skills, advices and support that the other people can exchange with you!',
   },
 ];
 

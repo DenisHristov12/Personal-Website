@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { respondToLandscapeTablets } from '../styles/mediaQueries';
 
 export const StyledMobileNavButton = styled.button`
-  padding: 0.8rem 1.2rem;
+  padding: 0 1.2rem;
 
   text-decoration: none;
   background-color: transparent;

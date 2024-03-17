@@ -16,6 +16,8 @@ export const StyledHomePage = styled.div`
   display: flex;
   flex-direction: column;
 
+  overflow: hidden;
+
   align-items: center;
   justify-content: space-around;
 
