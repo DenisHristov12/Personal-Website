@@ -61,6 +61,7 @@ function Contacts() {
     e.preventDefault();
 
     if (emailBody.length < 10) {
+      toast.error('Message must have more then 10 symbols!');
       return;
     }
 
